@@ -1,0 +1,252 @@
+.u-project-slider
+  position: relative
+  color: var(--default-text)
+  .container
+    display: flex
+    flex-direction: column-reverse
+    padding-top: 0
+    @media (min-width: 641px)
+      display: grid
+      grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 30) 1fr
+      padding: 0
+      gap: calc(var(--u-ritmo-verticale-vw) * 1.5) calc(var(--u-ritmo-verticale-vw) * 2)
+  &__title
+    -webkit-text-stroke: 1px #FFFFFF
+    text-transform: uppercase
+    color: transparent
+    font-size: calc(var(--u-ritmo-verticale-vw) * 7)
+    line-height: 1.4em
+    letter-spacing: 0.03em
+    mix-blend-mode: difference
+    @media (min-width: 641px)
+      position: absolute
+      height: auto
+      top: auto
+      bottom: calc(var(--u-ritmo-verticale-vw) * 5)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 7)
+      line-height: 1em
+      left: auto
+      right: calc(var(--u-ritmo-verticale-vw) * 35)
+      pointer-events: none
+
+    @media (max-width: 640px)
+      margin-top: -10%
+      z-index: 10
+      position: relative
+      width: 100vw
+      text-align: center
+      left: 50%
+      translate: -50% 0
+
+  &__logo
+    display: none
+    @media (min-width: 641px)
+      font-family: 'Kharms Display'
+      display: block
+      position: absolute
+      left: calc(var(--u-ritmo-verticale-vw) * 4)
+      z-index: 5
+      mix-blend-mode: difference
+      font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+      letter-spacing: -0.02em
+      -webkit-text-stroke: 1px #FFFFFF
+      color: transparent
+      line-height: calc(var(--u-ritmo-verticale-vw) * 8)
+  &__actions
+    position: relative
+    display: flex
+    font-size: calc(var(--u-ritmo-verticale-vw) * 2)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 3)
+    gap: calc(var(--u-ritmo-verticale-vw) * 2)
+    padding: calc(var(--u-ritmo-verticale-vw) * 2) 0
+
+    @media (min-width: 641px)
+      padding: 0
+      flex-direction: column
+      align-items: flex-end
+      text-align: right
+      gap: calc(var(--u-ritmo-verticale-vw) * 1)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 2)
+
+
+
+  &__theme,
+  &__nav,
+  &__grid
+    display: flex
+    flex-direction: column
+  &__nav
+    display: none
+    @media (min-width: 641px)
+      display: flex
+      margin-top: calc(var(--u-ritmo-verticale-vw) * 20)
+      text-transform: uppercase
+  &__theme
+    display: flex
+    margin-top: auto
+    flex-direction: row
+    line-height: calc(var(--u-ritmo-verticale-vw) * 3)
+    @media (min-width: 641px)
+      flex-direction: column
+      color: currentColor
+    @media (max-width: 640px)
+      color: #FFFFFF
+      mix-blend-mode: difference
+      gap: calc(var(--u-ritmo-verticale-vw) * 1)
+    button.is_active
+      font-weight: 700
+  &__theme,
+  &__grid,
+  &__pagination
+    span
+      width: 100%
+      text-align: right
+      line-height: calc(var(--u-ritmo-verticale-vw) * 3)
+    button
+      text-transform: uppercase
+  &__grid
+    @media (min-width: 641px)
+      margin-top: calc(var(--u-ritmo-verticale-vw) * 2)
+      span
+        width: auto
+    @media (max-width: 640px)
+      margin-left: auto
+    button
+      font-weight: 700
+      &:after
+        content: attr(data-grid)
+        display: inline-block
+        margin-left: calc(var(--u-ritmo-verticale-vw) * 0.9)
+    @media (max-width: 640px)
+      color: #FFFFFF
+      mix-blend-mode: difference
+  &__list
+    overflow: hidden
+    display: flex
+    position: relative
+    z-index: 2
+    @media (max-width: 640px)
+      overflow: initial
+      margin:  0 calc(var(--u-ritmo-verticale-vw) * -4)
+      order: 1
+
+
+.u-project-slider__card
+  aspect-ratio: 512/640
+  height: auto
+  transition:  0.3s ease-in-out
+  @media (min-width: 641px)
+    opacity: 0.2
+  .card--image
+    height: 100%
+  img
+    transition:  var(--transition)
+    object-fit: cover
+    width: 100%
+    height: 100%
+  canvas
+    transition:  var(--transition)
+
+
+
+
+
+[data-theme="color"]
+  .u-project-slider__logo
+    -webkit-text-stroke: inherit
+    color: #FFFFFF
+    mix-blend-mode: inherit
+  .u-project-slider__title
+    mix-blend-mode: inherit
+
+// slider
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+  background: var(--swiper-pagination-color)
+.u-project-slider--progressbar.swiper-pagination-progressbar
+  background: transparent
+  position: relative
+  width: calc(var(--u-ritmo-verticale-vw) * 32)
+  height: calc(var(--u-ritmo-verticale-vw) * 1)
+  border: 1px solid var(--default-text)
+  --swiper-pagination-color: var(--default-text)
+  @media (max-width: 640px)
+    position: absolute
+    top: calc(var(--headerHeight) * -1)
+    height: var(--headerHeight)
+    width: 100%
+.u-project-slider--pagination
+  line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+  letter-spacing: 0.03em
+
+@media (min-width: 641px)
+  .u-project-slider__card.swiper-slide-active
+    opacity: 1
+  .u-project-slider__card.swiper-slide-next
+    translate: 0% 5%
+
+  .u-project-slider__card.swiper-slide-next ~ .u-project-slider__card
+    display: flex
+    align-items: flex-end
+    translate: 85% 8.5%
+    canvas,
+    img
+      opacity: 0.5
+      scale: 0.9
+  .u-project-slider__card.swiper-slide-active ~ .u-project-slider__card
+    .square
+      pointer-events: none
+
+  .u-project-slider__card.swiper-slide-next ~ .u-project-slider__card ~.u-project-slider__card
+    translate: calc(90% * 2)
+  .swiper-wrapper
+    -webkit-transform-style: preserve-3d
+
+  .u-project-slider-slider_controls
+    grid-column: 2
+    display: flex
+    gap: calc(var(--u-ritmo-verticale-vw) * 1)
+    align-items: center
+    width: calc(var(--u-ritmo-verticale-vw) * 65)
+    .swiper--prev,
+    .swiper--next
+      aspect-ratio: 28/16
+      width: calc(var(--u-ritmo-verticale-vw) * 3.5)
+      height: auto
+      background-repeat: no-repeat
+      background-size: contain
+      cursor: pointer
+    .swiper--prev
+      margin-left: auto
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:difference'%3E%3Cpath d='M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM28 7L1 7V9L28 9V7Z' fill='%23F5F5F5'/%3E%3C/g%3E%3C/svg%3E")
+    .swiper--next
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:difference'%3E%3Cpath d='M27.7071 8.70711C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.928932C20.9526 0.538408 20.3195 0.538408 19.9289 0.928932C19.5384 1.31946 19.5384 1.95262 19.9289 2.34315L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.70711ZM0 9L27 9V7L0 7L0 9Z' fill='%23F5F5F5'/%3E%3C/g%3E%3C/svg%3E%0A")
+
+
+.u-project-slider .square
+  display: inline-block
+  background-color: rgba(255,255,255,.5)
+  z-index: 5
+  transition: opacity 0.18s ease-in
+  opacity: 0
+  pointer-events: all
+
+.u-project-slider .square.active
+    opacity: 0.75
+
+.btn-full-img
+  top: calc(var(--u-ritmo-verticale-vw) * 2)
+  left: auto
+  right: calc(var(--u-ritmo-verticale-vw) * 2)
+  position: absolute
+  width: calc(var(--u-ritmo-verticale-vw) * 2)
+  height: calc(var(--u-ritmo-verticale-vw) * 2)
+  background-color: #FFFFFF
+  border-radius: 50px
+  z-index: 10
+  cursor: pointer
+  transition: var(--transition)
+  opacity: 0
+  pointer-events: none
+.u-project-slider__card.swiper-slide-active:hover .btn-full-img
+  opacity: 1
+  pointer-events: all

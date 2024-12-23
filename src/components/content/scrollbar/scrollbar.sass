@@ -1,0 +1,69 @@
+.button_about_project,
+.scrollbar
+  display: none
+@media (min-width: 641px)
+  .scrollbar
+    display: block
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    width: calc(var(--u-ritmo-verticale-vw) * 8)
+    //background-color: rgba(245, 245, 245, .5)
+    z-index: 10
+    mix-blend-mode: difference
+
+    background-color: rgba(245, 245, 245, .5)
+    &__progress
+      width: 100%
+      height: 100%
+      transition: height 0.1s ease
+      mix-blend-mode: difference
+
+    &__value
+      text-align: center
+      margin-top: -1.5em
+      color: var(--default-text)
+      position: absolute
+      width: 100%
+      mix-blend-mode: difference
+    &__bottom
+      height: 100%
+      background-color: rgba(245, 245, 245, .5)
+      mix-blend-mode: difference
+  .button_about_project
+    text-transform: uppercase
+    position: fixed
+    top: auto
+    left: auto
+    bottom: calc(var(--u-ritmo-verticale-vw) * 5.5)
+    right: calc(var(--u-ritmo-verticale-vw) * 3.2)
+    font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
+    z-index: 10
+    display: flex
+    align-items: center
+    mix-blend-mode: difference
+    font-weight: 700
+    isolation: isolate
+    span:nth-child(1)
+      position: relative
+      color: #FFFFFF
+
+      &:after
+        content: ''
+        width: calc(var(--u-ritmo-verticale-vw) * 8)
+        height: calc(var(--u-ritmo-verticale-vw) * 8)
+        position: absolute
+        left: auto
+        right: calc(var(--u-ritmo-verticale-vw) * -2)
+        bottom: 0
+        background: #FFFFFF
+        mix-blend-mode: difference
+
+    .arrow
+      display: inline-block
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='66' viewBox='0 0 14 66' fill='none'%3E%3Cg style='mix-blend-mode:difference' filter='url(%23filter0_d_4369_347)'%3E%3Cpath d='M8.7071 65.7071C8.31658 66.0976 7.68341 66.0976 7.29289 65.7071L0.92893 59.3431C0.538405 58.9526 0.538405 58.3195 0.92893 57.9289C1.31945 57.5384 1.95262 57.5384 2.34314 57.9289L8 63.5858L13.6569 57.9289C14.0474 57.5384 14.6805 57.5384 15.0711 57.9289C15.4616 58.3195 15.4616 58.9526 15.0711 59.3431L8.7071 65.7071ZM9 4.37114e-08L9 65L7 65L7 -4.37114e-08L9 4.37114e-08Z' fill='%23F5F5F5'/%3E%3C/g%3E%3C/svg%3E")
+      aspect-ratio: 14/66
+      width: 14px
+      //mix-blend-mode: difference
+

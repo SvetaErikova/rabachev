@@ -1,0 +1,19 @@
+.glassy-overlay {
+
+}
+.back-canvas{
+  mix-blend-mode: difference;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.blur-canvas{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
