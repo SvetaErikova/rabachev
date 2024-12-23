@@ -185,8 +185,35 @@ let activateProjectSliderDesk = (swiper_item) => {
       // Устанавливаем позицию relative для элемента, чтобы квадраты были абсолютно позиционированы относительно него
       cardImage.style.position = 'relative';
 
-      createSquareGrid(cardImage,projectSliderDesk.slidesSizesGrid[0],projectSliderDesk.height);
+      // createSquareGrid(cardImage,projectSliderDesk.slidesSizesGrid[0],projectSliderDesk.height);
     });
+
+
+    // Функция для обработки наведения курсора
+    function handleCardHover(card) {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect(); // Получаем размеры и позицию карточки
+        const x = e.clientX - rect.left; // Позиция курсора по оси X внутри карточки
+        const y = e.clientY - rect.top; // Позиция курсора по оси Y внутри карточки
+
+        const centerX = rect.width / 2; // Центр карточки по оси X
+        const centerY = rect.height / 2; // Центр карточки по оси Y
+
+        const rotateX = (y - centerY) / 20; // Вращение по оси X (вверх/вниз)
+        const rotateY = (centerX - x) / 20; // Вращение по оси Y (влево/вправо)
+
+        // Применяем трансформацию
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      // Сбрасываем трансформацию при уходе курсора
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      });
+    }
+
+// Применяем обработчик ко всем элементам .card--image
+    document.querySelectorAll('.card--image').forEach(handleCardHover);
 
   })
 };
