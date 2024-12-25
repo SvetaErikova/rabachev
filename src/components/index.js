@@ -71,3 +71,32 @@ window.addEventListener('click', event => {
   if (event.target === modal) modal.classList.remove('is_active');
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".u-project__card");
+
+  cards.forEach((card, index) => {
+    // Разная скорость для каждой карточки
+    const speed = 0.3 + Math.random() * 1; // Случайная скорость от 0.5 до 1.5
+    const delay = index * 0.2; // Задержка для каждой карточки
+    const initialY = 50 + Math.random() * 300; // Случайное начальное смещение вниз от 50 до 150 пикселей
+
+    gsap.fromTo(card, {
+      y: initialY, // Случайное начальное смещение вниз
+      opacity: 0.5,
+      scale: 0.7
+    }, {
+      y: 0, // Конечное положение
+      opacity: 1,
+      scale: 1,
+      // duration: speed, // Случайная скорость
+      // delay: delay, // Задержка
+      scrollTrigger: {
+        trigger: card,
+        start: "top 80%", // Анимация начинается, когда карточка на 80% в видимой области
+        end: "bottom 50%", // Анимация заканчивается, когда карточка на 20% в видимой области
+        toggleActions: "play none reverse none",
+        markers: true, // Включите маркеры для отладки
+      },
+    });
+  });
+});

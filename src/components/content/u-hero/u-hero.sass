@@ -1,0 +1,18 @@
+.u-project__list
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: calc(var(--u-ritmo-verticale-vw) * 2)
+
+.u-project .u-project__card
+  opacity: 1
+.u-project .u-project__card:nth-child(even)
+  margin-top: 50%
+.u-project .u-project-slider__theme
+  margin-top: calc(var(--u-ritmo-verticale-vw) * 10)
+.u-project-slider__actions_container
+  position: sticky
+  top: 100px
+
+html.lenis body,
+section
+  overflow: initial
