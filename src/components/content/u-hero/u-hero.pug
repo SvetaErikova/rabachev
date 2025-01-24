@@ -1,37 +1,36 @@
 section
-    .u-project-slider.u-project
-        .u-project-slider__logo Fillipp Rabachev
-        .container
-            .u-project-slider__actions
-              .u-project-slider__actions_container
-                  .u-project-slider__nav
-                      .u-project-slider__nav__item
+    .u-hero
+        .container.u-hero__container
+            .u-hero__actions
+              .u-hero__actions_container
+                  .u-hero__nav
+                      .u-hero__nav__item
                           a.text_roll(href='/')
                               span index
-                      .u-project-slider__nav__item
+                      .u-hero__nav__item
                           a.text_roll(href='/')
                               span about
-                      .u-project-slider__nav__item
+                      .u-hero__nav__item
                           a.text_roll(href='/')
                               span Contact
-                      .u-project-slider__nav__item
+                      .u-hero__nav__item
                           a.text_roll(href='/')
                               span 404
-                  .u-project-slider__theme
+                  .u-hero__theme
+                      span settings
                       button.text_roll.is_active(data-theme='white')
                           span white
                       button.text_roll(data-theme='dark')
                           span dark
                       button.text_roll(data-theme='color')
                           span color
-                  .u-project-slider__grid
+                  .u-hero__grid
                       button.text_roll(data-grid='OFF')
                           span grid
-                  .u-project-slider__pagination
 
-            .u-project__list
-                .u-project__card.card
-                    .card--image
+            .u-hero__list
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 640px)')
@@ -40,8 +39,8 @@ section
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-1.jpg')
-                .u-project__card.card
-                    .card--image
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/webp' media='(max-width: 640px)')
@@ -50,8 +49,8 @@ section
                             source(srcset='./assets/img/gallery-2.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-2.jpg')
-                .u-project__card.card
-                    .card--image
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/webp' media='(max-width: 640px)')
@@ -60,8 +59,8 @@ section
                             source(srcset='./assets/img/gallery-2.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-2.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-2.jpg')
-                .u-project__card.card
-                    .card--image
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-3.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-3.jpg' type='image/webp' media='(max-width: 640px)')
@@ -70,8 +69,8 @@ section
                             source(srcset='./assets/img/gallery-3.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-3.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-3.jpg')
-                .u-project__card.card
-                    .card--image
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 640px)')
@@ -80,8 +79,8 @@ section
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-1.jpg')
-                .u-project__card.card
-                    .card--image
+                .u-hero__card.card
+                    .card__image
                         picture(aria-hidden='true')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(max-width: 640px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 640px)')
@@ -90,5 +89,7 @@ section
                             source(srcset='./assets/img/gallery-1.jpg' type='image/jpg' media='(min-width: 3840px)')
                             source(srcset='./assets/img/gallery-1.jpg' type='image/webp' media='(max-width: 3840px)')
                             img(src='./assets/img/gallery-1.jpg')
-            .u-project-slider__title
+            .u-hero__title
                 h1 Disposable
+
+div(style='height:100vh;')

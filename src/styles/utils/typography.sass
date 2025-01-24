@@ -74,6 +74,7 @@ html
   --u-button-color: #FFFFFF
   --gap-grid: calc(var(--u-ritmo-verticale-vw) * 4)
   --transition: 0.18s linear
+  --width-scrollbar: calc(var(--u-ritmo-verticale-vw) * 11.875)
 
 .container
   padding: calc(var(--u-ritmo-verticale-vw) * 4) calc(var(--u-ritmo-verticale-vw) * 4)
@@ -90,11 +91,10 @@ html
   html
     --u-ritmo-verticale-vw: 2.133333333333333vw
 
-/*@media (min-width: 1921px) {
-/*    :root {
-/*        --u-ritmo-verticale-vw: calc(.523560209424084vw/1.4);
-/*    }
-/*}
+@media (min-width: 1921px)
+  html
+    --u-ritmo-verticale-vw: calc(.523560209424084vw/1.4)
+
 
 img
   width: 100%
@@ -120,41 +120,34 @@ body
   background: var(--bck-color, #DDDDDD)
   transition: background-color var(--transition)
   position: relative
-
-  &[data-grid="ON"]:after
-    content: ''
-    inset: 0
-    background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid) calc(var(--u-ritmo-verticale-vw) * 4)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid) calc(var(--u-ritmo-verticale-vw) * 4))
-    position: absolute
-    pointer-events: none
-    transition: var(--transition)
-
-  &[data-theme='white']
-    --default-text: #000
-    --bck-color: #DDDDDD
-    --color-grid: rgba(254, 55, 5, 0.2)
-
-  &[data-theme='dark']
-    --default-text: #fff
-    --bck-color: #292828
-    --color-grid: rgba(240, 240, 240, 0.5)
-
-  &[data-theme='color']
-    --default-text: #fff
-    --bck-color: radial-gradient(50% 50% at 50% 50%, #FFE00B 21%, #FE3703 100%)
-    --color-grid: rgba(240, 240, 240, 0.5)
-
-/*theme
-
-
-body[data-theme='white']
+  // grid
   @media (min-width: 641px)
-    .swiper--prev, .swiper--next
-      filter: invert(1)
+    &:after
+      content: ''
+      inset: 0
+      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4))
+      position: absolute
+      pointer-events: none
+      transition: var(--transition)
+      z-index: -1
+      opacity: 0
+    &:before
+      content: ''
+      inset: 0
+      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16))
+      position: absolute
+      pointer-events: none
+      transition: var(--transition)
+      z-index: -1
+      opacity: 0
+    &[data-grid="ON"]
+      &:after
+        opacity: 1
+      &:before
+        opacity: 1
 
 
-button[data-theme]
-  cursor: pointer
+
 
 @media (max-width: 640px)
   section:first-of-type
@@ -165,10 +158,10 @@ button[data-theme]
 
 @media (min-width: 641px)
   section
-    padding-left: calc(var(--u-ritmo-verticale-vw) * 8)
+    padding-left: var(--width-scrollbar)
 
     &:first-of-type
-      padding-top: calc(var(--u-ritmo-verticale-vw) * 4)
+      padding-top: calc(var(--headerHeight) + calc(var(--u-ritmo-verticale-vw) * 1))
 
 main
   transition: 0.3s ease-in-out
@@ -176,20 +169,16 @@ main
 .blend-mix
   mix-blend-mode: difference
 
+// animation text roll
 .text_roll
   display: inline-block
   overflow-y: clip
   height: auto
   white-space: nowrap
-
   span
     position: relative
     display: inline-block
-    -webkit-transition: -webkit-transform .3s
-    transition: -webkit-transform .3s
     transition: transform .3s
-    transition: transform 0.3s, -webkit-transform 0.3s
-
     &::before
       position: absolute
       top: 100%
@@ -198,12 +187,8 @@ main
       width: 100%
       height: 100%
       content: attr(data-hover)
-      -webkit-transform: translate3d(0, 0, 0)
       transform: translate3d(0, 0, 0)
-
   &:hover span
-    -webkit-transform: translateY(-100%)
-    -ms-transform: translateY(-100%)
     transform: translateY(-100%)
 
 .card--image canvas
@@ -213,66 +198,6 @@ main
   width: 100%
   height: 100%
   z-index: 1
-
-/* Стили для модального окна
-/* Стили для модального окна
-
-.fullscreen-modal
-  position: fixed
-  left: 0
-  top: 0
-  width: 100vw
-  padding: calc(var(--u-ritmo-verticale-vw) * 2)
-  background-color: rgba(0, 0, 0, 0.9)
-  z-index: 50
-  right: 0
-  bottom: 0
-  overflow: hidden
-  -webkit-overflow-scrolling: touch
-  max-width: 100vw
-  height: 100vh
-  transition: .3s ease-out
-  place-items: center
-  -ms-scroll-chaining: none
-  overscroll-behavior: contain
-  opacity: 0
-  pointer-events: none
-.fullscreen-modal.is_active
-  opacity: 1
-  pointer-events: all
-.fullscreen-modal_container
-  height: 100%
-  width: 100%
-
-.fullscreen-modal_container .card
-  overflow: auto
-  img
-    height: auto
-/* Добавляем скролл
-
-.modal-content
-  display: block
-  margin: auto
-  position: relative
-  max-width: none
-  max-height: none
-
-
-.close
-  position: absolute
-  top: 15px
-  right: 35px
-  color: #f1f1f1
-  font-size: 40px
-  font-weight: bold
-  transition: 0.3s
-  cursor: pointer
-  z-index: 2
-
-  &:hover, &:focus
-    color: #bbb
-    text-decoration: none
-    cursor: pointer
 
 html.lenis
   overflow: hidden

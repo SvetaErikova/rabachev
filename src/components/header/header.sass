@@ -4,75 +4,94 @@
   left: 0
   top: 0
   z-index: 50
-  @media (max-width: 640px)
-    display: block
-    mix-blend-mode: difference
-    filter: invert(1)
+  mix-blend-mode: difference
   @media (min-width: 641px)
-    translate: 0 -100%
-    transition: var(--transition)
-    &.is_scrolled
-      translate: 0 0
   &__container
     display: flex
     align-items: center
+    justify-content: space-between
     gap: calc(var(--u-ritmo-verticale-vw)* 2)
     position: relative
     z-index: 50
-    padding-top: calc(var(--u-ritmo-verticale-vw) * .5)
-    padding-bottom:  calc(var(--u-ritmo-verticale-vw) * .5)
-    @media (min-width: 641px)
-      justify-content: space-between
+    @media (max-width: 640px)
+      justify-content: initial
+      padding: calc(var(--u-ritmo-verticale-vw)* 1.5)
+  &__theme
+    display: none
+    @media (max-width: 640px)
+      display: flex
+      width: calc(var(--u-ritmo-verticale-vw)* 3)
+      height: calc(var(--u-ritmo-verticale-vw)* 3)
+      background-size: contain
   &__logo
     font-family: 'Kharms Display'
     display: block
     z-index: 5
-    mix-blend-mode: difference
     font-size: calc(var(--u-ritmo-verticale-vw) * 4)
     letter-spacing: -0.03em
-    //color: var(--default-text)
+    color: #FFFFFF
     line-height: 1.4em
     @media (min-width: 641px)
       display: block
-      padding-left: calc(var(--u-ritmo-verticale-vw) * 2)
-      font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+      padding-left: calc(var(--u-ritmo-verticale-vw) * 4)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 6)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 8)
       letter-spacing: -0.03em
-      line-height: 1.4em
-  &__nav
-    display: none
-    @media (min-width: 641px)
-      display: flex
-      gap: calc(var(--u-ritmo-verticale-vw) * 1)
-      &_item
-        font-size: calc(var(--u-ritmo-verticale-vw)* 2)
-        text-transform: uppercase
+  &__button-open-menu
+    text-transform: uppercase
+    color: var(--default-text)
+    font-size: calc(var(--u-ritmo-verticale-vw) * 2)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 3)
+    margin-left: auto
+    display: flex
+    align-items: center
+    .icon-close
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cline x1='7.12883' y1='24.6255' x2='25.7949' y2='5.95951' stroke='%23F5F5F5' stroke-width='2'/%3E%3Cline x1='6.20589' y1='5.96025' x2='24.8719' y2='24.6263' stroke='%23F5F5F5' stroke-width='2'/%3E%3C/svg%3E")
+      background-size: contain
+      background-repeat: no-repeat
+      width: calc(var(--u-ritmo-verticale-vw) * 3)
+      height: calc(var(--u-ritmo-verticale-vw) * 3)
 
-  &__burger
-    display: none
+      filter: invert(1)
+      display: none
+    @media (min-width: 641px)
+      display: none
+  .menu
     @media (max-width: 640px)
+      display: none
+@media (min-width: 641px)
+  //.u-header
+  .menu
+    display: flex
+    justify-content: space-between
+    gap:  calc(var(--u-ritmo-verticale-vw)* 1)
+    position: absolute
+    left: auto
+    right: calc(var(--u-ritmo-verticale-vw)* 13.5)
+    top: calc(var(--headerHeight) + calc(var(--u-ritmo-verticale-vw)* 1))
+    width: calc(var(--u-ritmo-verticale-vw)* 65.375)
+    &__item
+      text-transform: uppercase
+      font-size: calc(var(--u-ritmo-verticale-vw)* 2)
+      line-height: calc(var(--u-ritmo-verticale-vw)* 3)
+      &__title
+        height: calc(var(--u-ritmo-verticale-vw)* 3)
+        color: var(--color-secondary-text)
+      &__list
+        display: flex
+        flex-direction: column
+    &__links
       display: flex
       flex-direction: column
-      justify-content: space-between
-      align-items: flex-end
-      width: calc(var(--u-ritmo-verticale-vw)* 4)
-      gap: calc(var(--u-ritmo-verticale-vw)* 1.2)
-      cursor: pointer
-      position: relative
-      margin-left: auto
-      margin-right: calc(var(--u-ritmo-verticale-vw)* -4)
-
-    span
-      display: block
-      width: 100%
-      height: 2px
-      background-color: #000
-      transition: all 0.3s ease-in-out
-      &:nth-child(2)
-        width: calc(var(--u-ritmo-verticale-vw)* 4.75)
-  /* Плавный переход
-
-
-  &__menu
+      filter: invert(1)
+      a
+        font-size: calc(var(--u-ritmo-verticale-vw)* 2)
+        &.is_active
+          font-weight: 700
+.u-header__menu
+  display: none
+@media (max-width: 640px)
+  .u-header__menu
     position: fixed
     transition: var(--transition)
     height: 100vh
@@ -81,41 +100,54 @@
     pointer-events: none
     padding-top: var(--headerHeight)
     z-index: 20
+    background-color: rgba(142, 142, 142, .8)
+    display: flex
+    max-width: 100vw
     //filter: invert(1)
     .container
       width: 100%
       display: flex
       flex-direction: column
     //margin-top: calc(var(--u-ritmo-verticale-vw)* 11)
-    &_list
-      display: flex
-      flex-direction: column
-      gap:  calc(var(--u-ritmo-verticale-vw)* 1)
-    &_item
+  .menu
+    display: flex
+    flex-direction: column
+    gap:  calc(var(--u-ritmo-verticale-vw)* 1)
+    &__item
       text-transform: uppercase
       font-size: calc(var(--u-ritmo-verticale-vw)* 8)
       a
         -webkit-text-stroke: 1px #FFFFFF
         color: transparent
-    &_note
-      font-size: calc(var(--u-ritmo-verticale-vw)* 3)
-      -webkit-text-stroke: 1px #FFFFFF
-      color: transparent
-      margin-top: auto
+        line-height: 0.9em
+      &__list
+        display: flex
+        flex-direction: column
+    &__links
+      display: flex
+      flex-wrap: wrap
+      a
+        font-size: calc(var(--u-ritmo-verticale-vw)* 3)
+        -webkit-text-stroke: 1px #FFFFFF
+        color: transparent
+        margin-top: auto
+        &.is_active
+          font-weight: 700
+
 
 .opening-menu
+  main
+    mix-blend-mode: difference
   .u-header
     mix-blend-mode: inherit
   .u-header__menu
-    background-color: rgba(142, 142, 142, .8)
     pointer-events: auto
-    display: flex
     opacity: 1
-  .u-header__burger span
-    background-color: #000
-    &:nth-child(1)
-      transform: translateY(14px) rotate(45deg)
-    &:nth-child(2)
-      opacity: 0
-    &:nth-child(3)
-      transform: translateY(-10px) rotate(-45deg)
+  .u-header__button-open-menu
+    span:not(.icon-close)
+      display: none
+    .icon-close
+      display: inline-block
+
+
+

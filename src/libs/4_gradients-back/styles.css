@@ -2,11 +2,11 @@
 
 }
 .back-canvas{
-  mix-blend-mode: difference;
+  mix-blend-mode: hard-light;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -10;
 }
 .blur-canvas{
   content: '';
@@ -15,5 +15,5 @@
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(50px);
   pointer-events: none;
-  z-index: -1;
+  z-index: -5;
 }
