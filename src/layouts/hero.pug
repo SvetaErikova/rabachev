@@ -41,7 +41,7 @@ html(lang="ru-RU")
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
     <![endif]-->
-  body(data-theme="white")
+  body(data-theme="white" data-grid="ON")
     .page
       include ../components/header/header
       main
@@ -53,9 +53,7 @@ html(lang="ru-RU")
         canvas.back-canvas
         .blur-canvas
 
-        #fullscreen-modal.fullscreen-modal(data-lenis-prevent='')
-          span.close
-          .fullscreen-modal_container
+        include ../components/content/full-image/full-image
 
     script(src="./assets/js/libs.min.js")
     script(src="./assets/js/main.js")

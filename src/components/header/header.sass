@@ -15,7 +15,7 @@
     z-index: 50
     @media (max-width: 640px)
       justify-content: initial
-      padding: calc(var(--u-ritmo-verticale-vw)* 1.5)
+      padding: 0 calc(var(--u-ritmo-verticale-vw)* 1.5)
   &__theme
     display: none
     @media (max-width: 640px)
@@ -27,16 +27,15 @@
     font-family: 'Kharms Display'
     display: block
     z-index: 5
-    font-size: calc(var(--u-ritmo-verticale-vw) * 4)
-    letter-spacing: -0.03em
+    font-size: calc(var(--u-ritmo-verticale-vw) * 3)
     color: #FFFFFF
-    line-height: 1.4em
+    line-height: calc(var(--u-ritmo-verticale-vw) * 6)
+    letter-spacing: -0.02em
     @media (min-width: 641px)
       display: block
       padding-left: calc(var(--u-ritmo-verticale-vw) * 4)
       font-size: calc(var(--u-ritmo-verticale-vw) * 6)
       line-height: calc(var(--u-ritmo-verticale-vw) * 8)
-      letter-spacing: -0.03em
   &__button-open-menu
     text-transform: uppercase
     color: var(--default-text)
@@ -74,6 +73,7 @@
       text-transform: uppercase
       font-size: calc(var(--u-ritmo-verticale-vw)* 2)
       line-height: calc(var(--u-ritmo-verticale-vw)* 3)
+      letter-spacing: 0.03em
       &__title
         height: calc(var(--u-ritmo-verticale-vw)* 3)
         color: var(--color-secondary-text)
@@ -85,7 +85,6 @@
       flex-direction: column
       filter: invert(1)
       a
-        font-size: calc(var(--u-ritmo-verticale-vw)* 2)
         &.is_active
           font-weight: 700
 .u-header__menu

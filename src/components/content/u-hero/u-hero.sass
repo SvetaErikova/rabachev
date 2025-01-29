@@ -2,7 +2,6 @@
   color: var(--default-text)
   @media (max-width: 640px)
     overflow-x: hidden
-    //height: calc(100vh - var(--headerHeight) )
   &__container
     position: relative
     padding: 0
@@ -12,13 +11,16 @@
       padding: 0 calc(var(--u-ritmo-verticale-vw) * 7) 0 calc(var(--u-ritmo-verticale-vw) * 4)
       gap: calc(var(--u-ritmo-verticale-vw) * 3)
   &__title
-    -webkit-text-stroke: 1.5px var(--default-text)
+    -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.1875) var(--default-text)
     text-transform: uppercase
     color: transparent
-    font-size: calc(var(--u-ritmo-verticale-vw) * 7)
-    line-height: 1.4em
+    font-size: calc(var(--u-ritmo-verticale-vw) * 8)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 8)
     letter-spacing: 0.03em
     width: max-content
+    display: flex
+    justify-content: center
+    transition: var(--transition)
     @media (min-width: 641px)
       font-size: calc(var(--u-ritmo-verticale-vw) * 21.625)
       pointer-events: none
@@ -27,11 +29,11 @@
       letter-spacing: 0.03em
       position: sticky
       bottom: 0
-      padding-left:  calc(var(--u-ritmo-verticale-vw) * 52)
+      padding-left:  calc(var(--u-ritmo-verticale-vw) * 50.4)
       z-index: -1
 
     @media (max-width: 640px)
-      margin-top: -13%
+      margin-top: -9%
       z-index: 10
       position: relative
       width: 100vw
@@ -78,7 +80,7 @@
     //margin-top: auto
     flex-direction: row
     line-height: calc(var(--u-ritmo-verticale-vw) * 3)
-    margin-top: 13.6vh
+    margin-top: 15vh
     @media (min-width: 641px)
       flex-direction: column
       color: currentColor
@@ -90,7 +92,7 @@
 
   &__grid
     @media (min-width: 641px)
-      margin-top: calc(var(--u-ritmo-verticale-vw) * 2)
+      margin-top: calc(var(--u-ritmo-verticale-vw) * 3)
       span
         width: auto
     button
@@ -101,6 +103,7 @@
         margin-left: calc(var(--u-ritmo-verticale-vw) * 0.9)
   &__card
     transition: var(--transition)
+    height: min-content
     &.swiper-slide-active
 
     .card__image
@@ -126,6 +129,11 @@
     pointer-events: none
     transition: var(--transition)
     z-index: 2
+    height: 100%
+    width: 100%
+    display: flex
+    align-items: flex-end
+    justify-content: center
 
 
 
@@ -145,7 +153,7 @@
 
 @media (min-width: 641px)
   .u-hero .u-hero__card:nth-child(even)
-    margin-top: 20%
+    margin-top: 22%
 
   .u-hero__actions_container
     position: sticky

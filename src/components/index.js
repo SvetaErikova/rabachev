@@ -6,7 +6,7 @@ function setTheme(theme) {
 
 // Функция для получения сохранённой темы из localStorage
 function getSavedTheme() {
-  return localStorage.getItem('theme') || 'default'; // Возвращаем сохранённую тему или дефолтную
+  return localStorage.getItem('theme') || 'white'; // Возвращаем сохранённую тему или дефолтную
 }
 
 // При загрузке страницы устанавливаем сохранённую тему
@@ -45,7 +45,6 @@ if (window.matchMedia('(max-width: 640px)').matches) {
   }
   // Обработчик клика на кнопку
   document.querySelector('.u-header__theme').addEventListener('click', function() {
-    console.log('ok')
     let currentTheme = document.body.dataset.theme;
     let nextTheme = getNextTheme(currentTheme);
     setTheme(nextTheme); // Устанавливаем следующую тему

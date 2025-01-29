@@ -7,20 +7,6 @@ btn_open_menu.addEventListener('click', () => {
 });
 // header var
 let header = document.querySelector('.u-header');
-window.addEventListener('load', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`)
 
-  let header_height = header.getBoundingClientRect().height
-  document.documentElement.style.setProperty('--headerHeight', `${header_height}px`)
-
-  // if (window.matchMedia('(max-width: 640px)').matches) {
-  //   window.addEventListener('scroll', function() {
-  //     if (window.scrollY >= header_height) {
-  //       header.classList.add('is_scrolled');
-  //     } else {
-  //       header.classList.remove('is_scrolled');
-  //     }
-  //   });
-  // }
-});
+let header_height = header.getBoundingClientRect().height
+document.documentElement.style.setProperty('--headerHeight', `${header_height}px`)
