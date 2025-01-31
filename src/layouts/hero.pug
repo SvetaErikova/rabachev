@@ -41,7 +41,7 @@ html(lang="ru-RU")
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
     <![endif]-->
-  body(data-theme="white" data-grid="ON")
+  body(data-theme="white")
     .page
       include ../components/header/header
       main
@@ -49,12 +49,10 @@ html(lang="ru-RU")
         include ../components/footer/footer
 
 
-        //  back
-        canvas.back-canvas
-        .blur-canvas
 
         include ../components/content/full-image/full-image
-
+        canvas.back-canvas
+        .blur-canvas
     script(src="./assets/js/libs.min.js")
     script(src="./assets/js/main.js")
     block script

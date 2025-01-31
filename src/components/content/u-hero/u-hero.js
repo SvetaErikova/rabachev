@@ -1,3 +1,4 @@
+
 let activateProjectSliderMob= (swiper_item) => {
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-hero__list');
@@ -59,7 +60,15 @@ u_hero.forEach(section => {
   } else {
     modalImage(section)
   }
+// Обработчик для кнопок переключения сетки
+  document.querySelectorAll('button[data-grid]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      let gridState = e.currentTarget.dataset.grid === 'ON' ? 'OFF' : 'ON';
 
+      e.currentTarget.dataset.grid = gridState;
+      section.dataset.grid = gridState;
+    });
+  });
 
 })
 

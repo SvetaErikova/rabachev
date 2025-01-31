@@ -66,14 +66,7 @@ if (window.matchMedia('(max-width: 640px)').matches) {
   });
 }
 
-// Обработчик для кнопок переключения сетки
-document.querySelectorAll('button[data-grid]').forEach(btn => {
-  btn.addEventListener('click', e => {
-    let gridState = e.currentTarget.dataset.grid === 'ON' ? 'OFF' : 'ON';
-    e.currentTarget.dataset.grid = gridState;
-    document.body.dataset.grid = gridState;
-  });
-});
+
 
 // Обработчик для текста с анимацией hover
 document.querySelectorAll('.text_roll').forEach(link => {

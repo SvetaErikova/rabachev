@@ -105,8 +105,6 @@ a
   color: currentColor
   text-decoration: none
 
-section
-  overflow: hidden
 
 .swiper-wrapper .card
   -webkit-transform: translate3d(0, 0, 0)
@@ -120,48 +118,19 @@ body
   background: var(--bck-color, #DDDDDD)
   transition: background-color var(--transition)
   position: relative
-  // grid
+
+
+
+
+.u-hero
+  padding-top: var(--headerHeight)
   @media (min-width: 641px)
-    &:after
-      content: ''
-      inset: 0
-      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4))
-      position: absolute
-      pointer-events: none
-      transition: var(--transition)
-      z-index: -1
-      opacity: 0
-    &:before
-      content: ''
-      inset: 0
-      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16))
-      position: absolute
-      pointer-events: none
-      transition: var(--transition)
-      z-index: -1
-      opacity: 0
-    &[data-grid="ON"]
-      &:after
-        opacity: 1
-      &:before
-        opacity: 1
-
-
-
-
-@media (max-width: 640px)
-  section:first-of-type
-    padding-top: var(--headerHeight)
+    padding-top: calc(var(--headerHeight) + calc(var(--u-ritmo-verticale-vw) * 1))
+    padding-left: var(--width-scrollbar)
 
 .no-scroll
   overflow: hidden
 
-@media (min-width: 641px)
-  section
-    padding-left: var(--width-scrollbar)
-
-    &:first-of-type
-      padding-top: calc(var(--headerHeight) + calc(var(--u-ritmo-verticale-vw) * 1))
 
 main
   transition: 0.3s ease-in-out
@@ -190,14 +159,6 @@ main
       transform: translate3d(0, 0, 0)
   &:hover span
     transform: translateY(-100%)
-
-.card--image canvas
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 1
 
 html.lenis
   overflow: hidden

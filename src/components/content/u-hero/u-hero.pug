@@ -1,167 +1,169 @@
-section
-    .u-hero
-        .container.u-hero__container
-            .u-hero__actions
-              .u-hero__actions_container
-                  .u-hero__nav
-                      .u-hero__nav__item
-                          a.text_roll(href='/')
-                              span index
-                      .u-hero__nav__item
-                          a.text_roll(href='/')
-                              span about
-                      .u-hero__nav__item
-                          a.text_roll(href='/')
-                              span Contact
-                      .u-hero__nav__item
-                          a.text_roll(href='/')
-                              span 404
-                  .u-hero__theme
-                      span settings
-                      button.text_roll.is_active(data-theme='white')
-                          span white
-                      button.text_roll(data-theme='dark')
-                          span dark
-                      button.text_roll(data-theme='color')
-                          span color
-                  .u-hero__grid
-                      button.text_roll(data-grid='ON')
-                          span grid
+.u-hero(data-grid="ON")
+    .container.u-hero__container
+        .u-hero__actions
+          .u-hero__actions_container
+              .u-hero__nav
+                  .u-hero__nav__item
+                      a.text_roll(href='/')
+                          span index
+                  .u-hero__nav__item
+                      a.text_roll(href='/')
+                          span about
+                  .u-hero__nav__item
+                      a.text_roll(href='/')
+                          span Contact
+                  .u-hero__nav__item
+                      a.text_roll(href='/')
+                          span 404
+              .u-hero__theme
+                  span settings
+                  button.text_roll.is_active(data-theme='white')
+                      span white
+                  button.text_roll(data-theme='dark')
+                      span dark
+                  button.text_roll(data-theme='color')
+                      span color
+              .u-hero__grid
+                  button.text_roll(data-grid='ON')
+                      span grid
 
-            .u-hero__list
-                .u-hero__card.card
-                    .card__image
-                        picture(aria-hidden='true')
-                            source(srcset='./assets/img/u-hero/1-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                            source(srcset='./assets/img/u-hero/1-640.webp' type='image/webp' media='(max-width: 640px)')
-                            source(srcset='./assets/img/u-hero/1-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                            source(srcset='./assets/img/u-hero/1-960.webp' type='image/webp' media='(max-width: 1920px)')
-                            source(srcset='./assets/img/u-hero/1-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                            source(srcset='./assets/img/u-hero/1-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                            img(src='./assets/img/u-hero/1-960.webp')
-                .u-hero__card.card
-                    .card__image
-                        picture(aria-hidden='true')
-                          source(srcset='./assets/img/u-hero/2-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                          source(srcset='./assets/img/u-hero/2-640.webp' type='image/webp' media='(max-width: 640px)')
-                          source(srcset='./assets/img/u-hero/2-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                          source(srcset='./assets/img/u-hero/2-960.webp' type='image/webp' media='(max-width: 1920px)')
-                          source(srcset='./assets/img/u-hero/2-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                          source(srcset='./assets/img/u-hero/2-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                          img(src='./assets/img/u-hero/2-960.webp')
-                .u-hero__card.card
-                    .card__image
-                        picture(aria-hidden='true')
-                          source(srcset='./assets/img/u-hero/3-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                          source(srcset='./assets/img/u-hero/3-640.webp' type='image/webp' media='(max-width: 640px)')
-                          source(srcset='./assets/img/u-hero/3-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                          source(srcset='./assets/img/u-hero/3-960.webp' type='image/webp' media='(max-width: 1920px)')
-                          source(srcset='./assets/img/u-hero/3-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                          source(srcset='./assets/img/u-hero/3-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                          img(src='./assets/img/u-hero/3-960.webp')
-                .u-hero__card.card
-                    .card__image
-                        picture(aria-hidden='true')
-                            source(srcset='./assets/img/u-hero/4-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                            source(srcset='./assets/img/u-hero/4-640.webp' type='image/webp' media='(max-width: 640px)')
-                            source(srcset='./assets/img/u-hero/4-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                            source(srcset='./assets/img/u-hero/4-960.webp' type='image/webp' media='(max-width: 1920px)')
-                            source(srcset='./assets/img/u-hero/4-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                            source(srcset='./assets/img/u-hero/4-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                            img(src='./assets/img/u-hero/4-960.webp')
-                .u-hero__card.card
-                  .card__image
+        .u-hero__list
+            .u-hero__card.card
+                .card__image
                     picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/5-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/5-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/5-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/5-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/5-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/5-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/5-960.webp')
-                .u-hero__card.card
-                  .card__image
+                        source(srcset='./assets/img/u-hero/1-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                        source(srcset='./assets/img/u-hero/1-640.webp' type='image/webp' media='(max-width: 640px)')
+                        source(srcset='./assets/img/u-hero/1-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                        source(srcset='./assets/img/u-hero/1-960.webp' type='image/webp' media='(max-width: 1920px)')
+                        source(srcset='./assets/img/u-hero/1-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                        source(srcset='./assets/img/u-hero/1-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                        img(src='./assets/img/u-hero/1-960.webp')
+            .u-hero__card.card
+                .card__image
                     picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/6-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/6-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/6-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/6-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/6-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/6-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/6-960.webp')
-                .u-hero__card.card
-                  .card__image
+                      source(srcset='./assets/img/u-hero/2-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                      source(srcset='./assets/img/u-hero/2-640.webp' type='image/webp' media='(max-width: 640px)')
+                      source(srcset='./assets/img/u-hero/2-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                      source(srcset='./assets/img/u-hero/2-960.webp' type='image/webp' media='(max-width: 1920px)')
+                      source(srcset='./assets/img/u-hero/2-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                      source(srcset='./assets/img/u-hero/2-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                      img(src='./assets/img/u-hero/2-960.webp')
+            .u-hero__card.card
+                .card__image
                     picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/7-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/7-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/7-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/7-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/7-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/7-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/7-960.webp')
-                .u-hero__card.card
-                  .card__image
+                      source(srcset='./assets/img/u-hero/3-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                      source(srcset='./assets/img/u-hero/3-640.webp' type='image/webp' media='(max-width: 640px)')
+                      source(srcset='./assets/img/u-hero/3-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                      source(srcset='./assets/img/u-hero/3-960.webp' type='image/webp' media='(max-width: 1920px)')
+                      source(srcset='./assets/img/u-hero/3-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                      source(srcset='./assets/img/u-hero/3-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                      img(src='./assets/img/u-hero/3-960.webp')
+            .u-hero__card.card
+                .card__image
                     picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/8-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/8-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/8-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/8-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/8-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/8-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/8-960.webp')
-                .u-hero__card.card
-                  .card__image
-                    picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/9-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/9-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/9-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/9-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/9-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/9-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/9-960.webp')
-                .u-hero__card.card
-                  .card__image
-                    picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/10-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/10-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/10-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/10-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/10-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/10-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/10-960.webp')
-                .u-hero__card.card
-                  .card__image
-                    picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/11-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/11-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/11-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/11-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/11-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/11-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/11-960.webp')
-                .u-hero__card.card
-                  .card__image
-                    picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/12-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/12-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/12-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/12-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/12-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/12-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/12-960.webp')
-                .u-hero__card.card
-                  .card__image
-                    picture(aria-hidden='true')
-                      source(srcset='./assets/img/u-hero/13-640.jpg' type='image/jpg' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/13-640.webp' type='image/webp' media='(max-width: 640px)')
-                      source(srcset='./assets/img/u-hero/13-960.jpg' type='image/jpg' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/13-960.webp' type='image/webp' media='(max-width: 1920px)')
-                      source(srcset='./assets/img/u-hero/13-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
-                      source(srcset='./assets/img/u-hero/13-1640.webp' type='image/webp' media='(min-width: 1921px)')
-                      img(src='./assets/img/u-hero/13-960.webp')
+                        source(srcset='./assets/img/u-hero/4-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                        source(srcset='./assets/img/u-hero/4-640.webp' type='image/webp' media='(max-width: 640px)')
+                        source(srcset='./assets/img/u-hero/4-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                        source(srcset='./assets/img/u-hero/4-960.webp' type='image/webp' media='(max-width: 1920px)')
+                        source(srcset='./assets/img/u-hero/4-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                        source(srcset='./assets/img/u-hero/4-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                        img(src='./assets/img/u-hero/4-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/5-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/5-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/5-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/5-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/5-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/5-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/5-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/6-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/6-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/6-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/6-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/6-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/6-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/6-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/7-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/7-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/7-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/7-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/7-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/7-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/7-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/8-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/8-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/8-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/8-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/8-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/8-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/8-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/9-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/9-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/9-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/9-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/9-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/9-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/9-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/10-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/10-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/10-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/10-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/10-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/10-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/10-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/11-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/11-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/11-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/11-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/11-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/11-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/11-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/12-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/12-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/12-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/12-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/12-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/12-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/12-960.webp')
+            .u-hero__card.card
+              .card__image
+                picture(aria-hidden='true')
+                  source(srcset='./assets/img/u-hero/13-640.jpg' type='image/jpg' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/13-640.webp' type='image/webp' media='(max-width: 640px)')
+                  source(srcset='./assets/img/u-hero/13-960.jpg' type='image/jpg' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/13-960.webp' type='image/webp' media='(max-width: 1920px)')
+                  source(srcset='./assets/img/u-hero/13-1640.jpg' type='image/jpg' media='(min-width: 1921px)')
+                  source(srcset='./assets/img/u-hero/13-1640.webp' type='image/webp' media='(min-width: 1921px)')
+                  img(src='./assets/img/u-hero/13-960.webp')
 
 
 
         .u-hero__title
             h1 Disposable
+
+
+        include ../scrollbar/scrollbar
 

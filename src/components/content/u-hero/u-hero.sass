@@ -1,7 +1,33 @@
 .u-hero
   color: var(--default-text)
+  position: relative
   @media (max-width: 640px)
     overflow-x: hidden
+  // grid
+  @media (min-width: 641px)
+    &:after
+      content: ''
+      inset: 0
+      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 3.75), var(--color-grid1) calc(var(--u-ritmo-verticale-vw) * 4))
+      position: absolute
+      pointer-events: none
+      transition: var(--transition)
+      z-index: -1
+      opacity: 0
+    &:before
+      content: ''
+      inset: 0
+      background: repeating-linear-gradient(transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16)), repeating-linear-gradient(90deg, transparent, transparent calc(var(--u-ritmo-verticale-vw) * 15.75), var(--color-grid2) calc(var(--u-ritmo-verticale-vw) * 16))
+      position: absolute
+      pointer-events: none
+      transition: var(--transition)
+      z-index: -1
+      opacity: 0
+    &[data-grid="ON"]
+      &:after
+        opacity: 1
+      &:before
+        opacity: 1
   &__container
     position: relative
     padding: 0
@@ -134,9 +160,6 @@
     display: flex
     align-items: flex-end
     justify-content: center
-
-
-
   .swiper-pagination-progressbar
     background-color: transparent
     position: relative
