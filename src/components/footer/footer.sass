@@ -1,22 +1,29 @@
 .footer
-  height: 50vh
+  //padding-top: 100vh
   background-color: #dddddd
-  //margin-top: -50vh
+  //margin-top: calc(var(--footerHeight) * -1 + 100vh)
+  margin-top: -100lvh
+  height: calc(var(--footerHeight) + 100vh)
   //position: fixed
   //width: 100%
   //bottom: 0
-  bottom: 0
+  //clip-path: polygon(0% 664px, 100% 664px, 100% 100%, 0% 100%)
+  //clip-path: polygon(0% 0px, 100% 0px, 100% 100%, 0% 100%)
+
+  &__container
+    position: sticky
+    top: calc( 100vh - var(--footerHeight))
 
 
-//.u-image-text
-//  position: relative
-//  z-index: 2
-//  background-color: white
-//  transition: transform 0.5s ease
 
+//.u-image-text,
+//.footer
+//  position: absolute
+//  width: 100%
+//  will-change: transform
 
 .footer
-  //position: relative
+  position: relative
   z-index: 1
   background-color: #f0f0f0
 
