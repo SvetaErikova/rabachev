@@ -4,21 +4,6 @@ function setTheme(theme) {
   localStorage.setItem('theme', theme); // Сохраняем тему в localStorage
 }
 
-// паралакс сетки
-// document.addEventListener('scroll', function() {
-//   const body = document.querySelector('body');
-//   const parallaxElement = body.querySelector(':after');
-//
-//   // Получаем текущую позицию прокрутки
-//   let scrollPosition = window.pageYOffset;
-//
-//   // Вычисляем значение для эффекта параллакса
-//   let parallaxValue = 'translateY(' + (scrollPosition * 0.5) + 'px)'; // 0.5 — коэффициент параллакса
-//
-//   // Применяем трансформацию
-//   body.style.setProperty('--parallax-transform', parallaxValue);
-// });
-
 // Функция для получения сохранённой темы из localStorage
 function getSavedTheme() {
   return localStorage.getItem('theme') || 'white'; // Возвращаем сохранённую тему или дефолтную

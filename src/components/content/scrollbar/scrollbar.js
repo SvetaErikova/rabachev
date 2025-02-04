@@ -1,5 +1,5 @@
 if (window.matchMedia('(min-width: 641px)').matches) {
-  document.addEventListener('DOMContentLoaded', function () {
+  function scrollbarHero(){
     let progressBar = document.querySelector('.scrollbar__progress');
     let progressValue = document.querySelector('.scrollbar__value');
     let heroBlock = document.querySelector('.u-hero'); // Находим блок u-hero
@@ -19,5 +19,8 @@ if (window.matchMedia('(min-width: 641px)').matches) {
       progressBar.style.height = reverseProgress + '%'; // Устанавливаем высоту прогресс-бара
       progressValue.textContent = Math.round(reverseProgress) + '%'; // Устанавливаем текст процентов
     });
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    scrollbarHero()
   });
 }
