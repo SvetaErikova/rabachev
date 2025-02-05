@@ -51,8 +51,6 @@ if (window.matchMedia('(max-width: 640px)').matches) {
   });
 }
 
-
-
 // Обработчик для текста с анимацией hover
 document.querySelectorAll('.text_roll').forEach(link => {
   let span = link.querySelector('span');

@@ -1,5 +1,4 @@
 let btn_open_menu = document.querySelector('.u-header__button-open-menu');
-let header_menu = document.querySelector('.u-header__menu');
 
 btn_open_menu.addEventListener('click', () => {
   // header_menu.classList.toggle('opening_menu'); // Переключаем класс для .u-header
@@ -7,6 +6,5 @@ btn_open_menu.addEventListener('click', () => {
 });
 // header var
 let header = document.querySelector('.u-header');
-
 let header_height = header.getBoundingClientRect().height
 document.documentElement.style.setProperty('--headerHeight', `${header_height}px`)
