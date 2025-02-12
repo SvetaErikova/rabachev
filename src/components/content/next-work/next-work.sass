@@ -1,0 +1,28 @@
+.next-work
+  display: flex
+  gap: calc(var(--u-ritmo-verticale-vw) * 2)
+  align-items: center
+  position: relative
+  z-index: 2
+  background-color: #F5F5F5
+  color: #FFFFFF
+  padding: calc(var(--u-ritmo-verticale-vw) * 2.5) calc(var(--u-ritmo-verticale-vw) * 4)
+  @media (max-width: 640px)
+    flex-wrap: wrap
+  &:after
+    content: ''
+    position: absolute
+    inset: 0
+    width: var(--progressValue, 0)
+    background-color: #000000
+    z-index: -1
+  &> div
+    mix-blend-mode: difference
+  &__text
+  &__title
+    text-transform: uppercase
+    font-weight: 700
+    font-size: calc(var(--u-ritmo-verticale-vw) * 8)
+    margin-left: auto
+  &__note
+    margin-left: calc(var(--u-ritmo-verticale-vw) * 20)

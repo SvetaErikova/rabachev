@@ -8,13 +8,13 @@ let activateProjectSliderMob = (swiper_item) => {
 
   // Инициализация Swiper
   const projectSliderMob = new Swiper(slider, {
-    modules: [SwiperGL],
-    effect: 'gl',
+    // modules: [SwiperGL],
+    // effect: 'gl',
     // SwiperGL module parameters
-    gl: {
-      // specify required shader effect
-      shader: 'morph-x',
-    },
+    // gl: {
+    //   // specify required shader effect
+    //   shader: 'morph-x',
+    // },
     createElements: true,
     slideClass: 'card',
     grabCursor: true,
