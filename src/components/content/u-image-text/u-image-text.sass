@@ -1,20 +1,59 @@
 .u-image-text
-  background-color: var(--bck-color)
+  background-color: #FFFFFF
   position: relative
+  overflow: hidden
   z-index: 2
+  perspective: 1000px
 
   &__container
     display: flex
     flex-direction: column
+    gap: calc( var(--u-ritmo-verticale-vw) * 2)
     @media (min-width: 641px)
-      display: grid
-      grid-template-columns: repeat(2, 1fr)
-      gap: calc( var(--u-ritmo-verticale-vw) * 5)
+      justify-content: space-between
+      flex-direction: row
+
   &__image
-    aspect-ratio: 1/1
+    @media (min-width: 641px)
+      width: calc( var(--u-ritmo-verticale-vw) * 85.25)
+      position: relative
+      aspect-ratio: 1/1
+      height: 100%
   &__content
-  &__title
-    font-size: calc( var(--u-ritmo-verticale-vw) * 8)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: calc( var(--u-ritmo-verticale-vw) * 1)
+    @media (min-width: 641px)
+      width: calc( var(--u-ritmo-verticale-vw) * 76.5)
+      gap: calc( var(--u-ritmo-verticale-vw) * 2)
+
+  &__subtitle
+    color: #737373
+    font-size: calc( var(--u-ritmo-verticale-vw) * 2)
+    line-height: calc( var(--u-ritmo-verticale-vw) * 2)
+    @media (min-width: 641px)
+      font-size: calc( var(--u-ritmo-verticale-vw) * 3)
+      line-height: calc( var(--u-ritmo-verticale-vw) * 3)
   &__text
-    font-size: calc( var(--u-ritmo-verticale-vw) * 3)
+    color: var(--default-text)
+    font-size: calc( var(--u-ritmo-verticale-vw) * 4)
+    line-height: calc( var(--u-ritmo-verticale-vw) * 4)
+    @media (min-width: 641px)
+      line-height: calc( var(--u-ritmo-verticale-vw) * 8)
+      font-size: calc( var(--u-ritmo-verticale-vw) * 8)
+  @media (min-width: 641px)
+    .card
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      overflow: hidden
+
+    .card:not(:first-of-type)
+      clip-path: polygon(50% 25%, 50% 25%, 50% 75%, 50% 75%)
+  //    slider
+  @media (max-width: 640px)
+     .slider_controls
 

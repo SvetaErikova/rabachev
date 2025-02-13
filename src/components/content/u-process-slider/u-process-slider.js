@@ -1,21 +1,21 @@
-let activateProcessSliderDesk = (swiper_item) => {
+let activateProcessSlider = (swiper_item) => {
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-process-slider__list');
 
   // Создаем элементы для пагинации и прогресс-бара
   let slider_pagination = document.createElement('div');
-  slider_pagination.classList.add('u-process-slider--pagination');
+  slider_pagination.classList.add('slider--pagination');
 
   let slider_progressbar = document.createElement('div');
-  slider_progressbar.classList.add('u-process-slider--progressbar');
-
+  slider_progressbar.classList.add('slider--progressbar');
+  console.log(slider_pagination)
 
   let slider_controls = document.createElement('div');
-  slider_controls.classList.add('u-process-slider-slider_controls');
+  slider_controls.classList.add('slider_controls');
 
 
   slider_controls.append(slider_progressbar);
-  slider_progressbar.append(slider_pagination);
+
 
   // Создаем кнопки навигации
   let swiper_nav_prev = document.createElement('div');
@@ -31,15 +31,13 @@ let activateProcessSliderDesk = (swiper_item) => {
     createElements: true,
     slideClass: 'card',
     grabCursor: true,
-    draggable: true,
     simulateTouch: true,
     freeMode: false,
+    allowTouchMove: true,
+    uniqueNavElements: true,
     loop: true,
-    slidesPerView: 3.5,
-    loopAdditionalSlides: 10,
-    loopPreventsSliding: false,
+    slidesPerView: 3,
     spaceBetween: 8, // Отключаем стандартные отступы
-    speed: 660,
     mousewheel: {
       forceToAxis: true,
     },
@@ -68,7 +66,7 @@ let activateProcessSliderDesk = (swiper_item) => {
     const totalSlides = swiper.slides.length; // Общее количество слайдов
     slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
   }
-
+  slider_progressbar.append(slider_pagination);
   swiper_item.querySelector('.container').append(slider_controls);
 
 };
@@ -80,14 +78,6 @@ let activateProcessSliderDesk = (swiper_item) => {
 let u_process_slider= document.querySelectorAll('.u-process-slider');
 
 u_process_slider.forEach(section => {
-
-  if (window.matchMedia('(min-width: 641px)').matches) {
-
-    activateProcessSliderDesk(section)
-
-  } else {
-    activateprocessSliderMob(section)
-
-  }
+  activateProcessSlider(section)
 
 })

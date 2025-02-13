@@ -44,7 +44,7 @@ let activateProjectSliderMob = (swiper_item) => {
 let u_hero= document.querySelectorAll('.u-hero');
 
 u_hero.forEach(section => {
-  if (window.matchMedia('(max-width: 641px)').matches) {
+  if (window.matchMedia('(max-width: 640px)').matches) {
     activateProjectSliderMob(section)
       let heroList = document.querySelector('.u-hero__list');
       function stopAnimation() {

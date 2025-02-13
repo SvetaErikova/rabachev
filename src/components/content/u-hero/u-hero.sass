@@ -1,6 +1,8 @@
 .u-hero
   color: var(--default-text)
   position: relative
+  background-color: var(--bck-color)
+  transition: 0.18s background-color ease-in-out
   @media (max-width: 640px)
     overflow-x: hidden
   // grid
@@ -12,7 +14,6 @@
       position: absolute
       pointer-events: none
       transition: var(--transition)
-      z-index: -1
       opacity: 0
     &:before
       content: ''
@@ -21,7 +22,6 @@
       position: absolute
       pointer-events: none
       transition: var(--transition)
-      z-index: -1
       opacity: 0
     &[data-grid="ON"]
       &:after
@@ -31,6 +31,7 @@
   &__container
     position: relative
     padding: 0
+    z-index: 1
     @media (min-width: 641px)
       display: grid
       grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 9) 1fr
@@ -72,7 +73,6 @@
       grid-template-columns: repeat(2, 1fr)
       gap: calc(var(--u-ritmo-verticale-vw) * 12)
     @media (max-width: 640px)
-      aspect-ratio: 1/1
       animation: sliderMobAnimation 1.5s ease-in-out infinite
   &__actions
     display: none
@@ -135,6 +135,7 @@
 
     .card__image
       position: relative
+      z-index: 2
     &:hover
       .btn-full-img
         opacity: 1
