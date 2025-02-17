@@ -1,4 +1,4 @@
-if (window.matchMedia('(min-width: 641px)').matches) {
+if (window.matchMedia('(min-width: 641px)').matches)  {
   function scrollbarHero(){
     let progressBar = document.querySelector('.scrollbar__progress');
     let progressValue = document.querySelector('.scrollbar__value');
@@ -20,7 +20,5 @@ if (window.matchMedia('(min-width: 641px)').matches) {
       progressValue.textContent = Math.round(reverseProgress) + '%'; // Устанавливаем текст процентов
     });
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    scrollbarHero()
-  });
+
 }

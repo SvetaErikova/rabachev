@@ -8,7 +8,6 @@ let activateProcessSlider = (swiper_item) => {
 
   let slider_progressbar = document.createElement('div');
   slider_progressbar.classList.add('slider--progressbar');
-  console.log(slider_pagination)
 
   let slider_controls = document.createElement('div');
   slider_controls.classList.add('slider_controls');
@@ -30,14 +29,10 @@ let activateProcessSlider = (swiper_item) => {
   const processSliderDesk = new Swiper(slider, {
     createElements: true,
     slideClass: 'card',
-    grabCursor: true,
-    simulateTouch: true,
-    freeMode: false,
-    allowTouchMove: true,
-    uniqueNavElements: true,
+    slidesPerView: 1,
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 8, // Отключаем стандартные отступы
+    spaceBetween: 32,
+    initialSlide: 1,
     mousewheel: {
       forceToAxis: true,
     },
@@ -48,6 +43,12 @@ let activateProcessSlider = (swiper_item) => {
     pagination: {
       el: slider_progressbar,
       type: "progressbar",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2.5,
+        spaceBetween: 8
+      }
     },
     on: {
       init: function () {

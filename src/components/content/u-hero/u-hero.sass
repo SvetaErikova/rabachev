@@ -4,7 +4,7 @@
   background-color: var(--bck-color)
   transition: 0.18s background-color ease-in-out
   @media (max-width: 640px)
-    overflow-x: hidden
+    //overflow-x: hidden
   // grid
   @media (min-width: 641px)
     &:after
@@ -37,6 +37,8 @@
       grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 9) 1fr
       padding: 0 calc(var(--u-ritmo-verticale-vw) * 7) 0 calc(var(--u-ritmo-verticale-vw) * 4)
       gap: calc(var(--u-ritmo-verticale-vw) * 3)
+    @media (max-width: 640px)
+      overflow: hidden
   &__title
     -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.1875) var(--default-text)
     text-transform: uppercase
@@ -73,7 +75,10 @@
       grid-template-columns: repeat(2, 1fr)
       gap: calc(var(--u-ritmo-verticale-vw) * 12)
     @media (max-width: 640px)
-      animation: sliderMobAnimation 1.5s ease-in-out infinite
+      display: flex
+      //aspect-ratio: 375/467
+      //animation: sliderMobAnimation 1.5s ease-in-out infinite
+      aspect-ratio: 1/1
   &__actions
     display: none
     @media (min-width: 641px)

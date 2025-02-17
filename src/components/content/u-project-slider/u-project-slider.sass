@@ -1,27 +1,43 @@
 .u-project-slider
   position: relative
-  color: var(--default-text)
+  color: var(--color-text)
+  overflow: hidden
   .container
     display: flex
     flex-direction: column-reverse
     @media (min-width: 641px)
 
-      display: flex
-      flex-direction: column
-      //display: grid
-      //gap: calc(var(--u-ritmo-verticale-vw) * 2)
-      //grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 76) 1fr
+      //display: flex
+      //flex-direction: column
+      display: grid
+      grid-template-rows: 1fr calc(var(--u-ritmo-verticale-vw) * 35) calc(var(--u-ritmo-verticale-vw) * 7.5)
+      gap: calc(var(--u-ritmo-verticale-vw) * 2)
+      grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 76) 1fr
 
   &__list
+    grid-column: 1
+    grid-row: span 2
     display: flex
+    flex-direction: column
     position: relative
     z-index: 2
     height: calc(var(--u-ritmo-verticale-vw) * 90)
+    overflow: hidden
+    width: 100%
     @media (max-width: 640px)
-      overflow: initial
       margin:  0 calc(var(--u-ritmo-verticale-vw) * -4)
       order: 1
+    &-thumbs
+      overflow: hidden
+      grid-column: 2
+      grid-row: 2/ span 3
+      width: calc(100% + 100px)
+      img
+        object-fit: contain
+        object-position: top
   &__content
+    grid-row: 1
+    grid-column: 2
     h3
       font-weight: 700
       font-size: calc(var(--u-ritmo-verticale-vw) * 8)
@@ -41,35 +57,5 @@
     height: 100%
 
 
-
-
-
-
 @media (min-width: 641px)
-  .u-project-slider
-    .swiper-wrapper
-      align-items: flex-end
-  .u-project-slider__card.swiper-slide-active
-    opacity: 1
-    width: 100%
-    height: 100%
-  .u-project-slider__card.swiper-slide-active ~ .card
-    display: flex
-    @media (min-width: 641px)
-      .card--image
-        //width: calc(100% /2)
-        //height: calc(100% /2)
-        //height: auto
-        transition:  var(--transition)
-        //display: flex
-        //align-items: flex-end
-
-        img
-          object-fit: contain
-
-  .u-project-slider__card.swiper-slide-active
-    aspect-ratio: 612/668
-
-
-
 

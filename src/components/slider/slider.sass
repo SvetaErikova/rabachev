@@ -7,11 +7,7 @@
   width: 100%
   height: calc(var(--u-ritmo-verticale-vw) * 3)
   //border: 1px solid var(--color-text)
-  @media (max-width: 640px)
-    position: absolute
-    top: calc(var(--headerHeight) * -1)
-    height: var(--headerHeight)
-    width: 100%
+
 .slider--pagination
   font-size: calc(var(--u-ritmo-verticale-vw) * 2)
   line-height: calc(var(--u-ritmo-verticale-vw) * 3)
@@ -26,12 +22,12 @@
 .slider_controls
   grid-column: 1
   display: flex
-  gap: calc(var(--u-ritmo-verticale-vw) * 1)
+  gap: calc(var(--u-ritmo-verticale-vw) * 3)
   align-items: center
   width: 100%
   .swiper--prev,
   .swiper--next
-    aspect-ratio: 28/16
+    aspect-ratio: 1/1
     width: calc(var(--u-ritmo-verticale-vw) * 3.5)
     height: auto
     background-repeat: no-repeat
@@ -40,5 +36,10 @@
   .swiper--prev
     margin-left: auto
     background-image: url("data:image/svg+xml,%3Csvg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:difference'%3E%3Cpath d='M0.292892 7.29289C-0.0976315 7.68342 -0.0976315 8.31658 0.292892 8.70711L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34315C8.46159 1.95262 8.46159 1.31946 8.07107 0.928932C7.68054 0.538408 7.04738 0.538408 6.65685 0.928932L0.292892 7.29289ZM28 7L1 7V9L28 9V7Z' fill='%23F5F5F5'/%3E%3C/g%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9.5 6L3 12M3 12L9.5 18M3 12H22' stroke='%232E2728' stroke-width='1.5'/%3E%3C/svg%3E")
   .swiper--next
     background-image: url("data:image/svg+xml,%3Csvg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:difference'%3E%3Cpath d='M27.7071 8.70711C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.928932C20.9526 0.538408 20.3195 0.538408 19.9289 0.928932C19.5384 1.31946 19.5384 1.95262 19.9289 2.34315L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.70711ZM0 9L27 9V7L0 7L0 9Z' fill='%23F5F5F5'/%3E%3C/g%3E%3C/svg%3E%0A")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M14.5 18L21 12M21 12L14.5 6M21 12L2 12' stroke='%232E2728' stroke-width='1.5'/%3E%3C/svg%3E")
+.swiper-wrapper
+  -webkit-transform-style: preserve-3d
+  align-items: flex-start
