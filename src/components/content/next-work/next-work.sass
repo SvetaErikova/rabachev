@@ -1,28 +1,42 @@
 .next-work
   display: flex
   gap: calc(var(--u-ritmo-verticale-vw) * 2)
-  align-items: center
+  align-items: flex-end
   position: relative
   z-index: 2
   background-color: #F5F5F5
-  color: #FFFFFF
-  padding: calc(var(--u-ritmo-verticale-vw) * 2.5) calc(var(--u-ritmo-verticale-vw) * 4)
-  @media (max-width: 640px)
-    flex-wrap: wrap
+  color: #F5F5F5
+  padding: calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 1)
+  @media (min-width: 641px)
+    align-items: center
+    color: #FFFFFF
+    padding: calc(var(--u-ritmo-verticale-vw) * 2.5) calc(var(--u-ritmo-verticale-vw) * 4)
+
   &:after
     content: ''
     position: absolute
     inset: 0
-    width: var(--progressValue, 0)
-    background-color: #000000
+    width: 100%
+    background-color: #2E2728
     z-index: -1
-  &> div
+    @media (min-width: 641px)
+      width: var(--progressValue, 0)
+  & > div
     mix-blend-mode: difference
   &__text
+    @media (max-width: 640px)
+      display: none
   &__title
     text-transform: uppercase
     font-weight: 700
-    font-size: calc(var(--u-ritmo-verticale-vw) * 8)
-    margin-left: auto
+    font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+    @media (min-width: 641px)
+      font-weight: 700
+      font-size: calc(var(--u-ritmo-verticale-vw) * 8)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 9)
+      margin-left: auto
   &__note
-    margin-left: calc(var(--u-ritmo-verticale-vw) * 20)
+    white-space: nowrap
+    @media (min-width: 641px)
+      margin-left: calc(var(--u-ritmo-verticale-vw) * 20)

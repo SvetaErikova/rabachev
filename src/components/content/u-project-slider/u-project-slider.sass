@@ -2,21 +2,38 @@
   position: relative
   color: var(--color-text)
   overflow: hidden
+  display: flex
+  flex-direction: column
   .container
     display: flex
-    flex-direction: column-reverse
+    flex-direction: column
     @media (min-width: 641px)
-
-      //display: flex
-      //flex-direction: column
       display: grid
       grid-template-rows: 1fr calc(var(--u-ritmo-verticale-vw) * 35) calc(var(--u-ritmo-verticale-vw) * 7.5)
       gap: calc(var(--u-ritmo-verticale-vw) * 2)
       grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 76) 1fr
+  &__title
+    display: none
+    @media (min-width: 641px)
+      margin: calc(var(--u-ritmo-verticale-vw) * 11) auto  calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 42)
+      grid-column: span 2
+      display: flex
+      align-items: flex-end
+      gap: calc(var(--u-ritmo-verticale-vw) * 1)
+      text-transform: uppercase
+      h2
+        -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.1875) var(--color-text)
+        text-transform: uppercase
+        color: transparent
+        font-size: calc(var(--u-ritmo-verticale-vw) * 12)
+        line-height: calc(var(--u-ritmo-verticale-vw) * 9)
+        letter-spacing: 0.03em
+      p
+        font-weight: 700
+        font-size: calc(var(--u-ritmo-verticale-vw) * 4)
+        line-height: calc(var(--u-ritmo-verticale-vw) * 4)
 
   &__list
-    grid-column: 1
-    grid-row: span 2
     display: flex
     flex-direction: column
     position: relative
@@ -24,26 +41,50 @@
     height: calc(var(--u-ritmo-verticale-vw) * 90)
     overflow: hidden
     width: 100%
+    @media (min-width: 641px)
+      grid-column: 1
+      grid-row: span 2
     @media (max-width: 640px)
-      margin:  0 calc(var(--u-ritmo-verticale-vw) * -4)
+      width: 100%
+      height: auto
+      aspect-ratio: 360/362
+      margin-bottom: calc(var(--u-ritmo-verticale-vw) * 2)
       order: 1
-    &-thumbs
-      overflow: hidden
-      grid-column: 2
-      grid-row: 2/ span 3
-      width: calc(100% + 100px)
-      img
-        object-fit: contain
-        object-position: top
+    @media (min-width: 641px)
+      &-thumbs
+        overflow: hidden
+        grid-column: 2
+        grid-row: 2/ span 3
+        width: calc(100% + 100px)
+        img
+          object-fit: contain
+          object-position: top
   &__content
-    grid-row: 1
-    grid-column: 2
+    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 4)
+    @media (min-width: 641px)
+      margin-bottom: 0
+      grid-row: 1
+      grid-column: 2
     h3
+      text-transform: uppercase
       font-weight: 700
-      font-size: calc(var(--u-ritmo-verticale-vw) * 8)
-      line-height: calc(var(--u-ritmo-verticale-vw) * 9)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 3)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+      @media (min-width: 641px)
+        font-size: calc(var(--u-ritmo-verticale-vw) * 8)
+        line-height: calc(var(--u-ritmo-verticale-vw) * 9)
     p
-      font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 2.5)
+      letter-spacing: calc(var(--u-ritmo-verticale-vw) * 0.1 * -1)
+      @media (min-width: 641px)
+        font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+        line-height: calc(var(--u-ritmo-verticale-vw) * 5)
+      a
+        color: #0128E4
+  .slider_controls
+    @media (max-width: 640px)
+      order: 1
 
 .u-project-slider__card
   height: auto

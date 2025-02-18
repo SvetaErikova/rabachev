@@ -77,16 +77,17 @@ html
   --width-scrollbar: calc(var(--u-ritmo-verticale-vw) * 11.875)
 
 .container
-  padding: calc(var(--u-ritmo-verticale-vw) * 4) calc(var(--u-ritmo-verticale-vw) * 1)
+  padding: 0 calc(var(--u-ritmo-verticale-vw) * 1)
 
 @media (min-width: 641px)
   .container
-    padding: calc(var(--u-ritmo-verticale-vw) * 4) calc(var(--u-ritmo-verticale-vw) * 10)
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 10)
 
 @media (min-width: 1921px)
   .container
-    padding: calc(var(--u-ritmo-verticale-vw) * 4) calc(var(--u-ritmo-verticale-vw) * 16)
-
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 16)
+main > div:not(:first-of-type)
+  margin: calc(var(--u-ritmo-verticale-vw) * 6) 0
 @media (max-width: 640px)
   html
     --u-ritmo-verticale-vw: 2.133333333333333vw
@@ -119,6 +120,7 @@ a
 body
   //background: #fff
   position: relative
+
 
 
 
@@ -163,7 +165,6 @@ main
 
 html.lenis
   overflow: hidden
-
   body
     overflow: hidden
 

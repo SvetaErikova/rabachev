@@ -1,23 +1,23 @@
 
-let activateProjectSliderMob = (swiper_item) => {
+let activateHeroSliderMob = (swiper_item) => {
   // swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
   //   img.classList.add('swiper-gl-image');
   // });
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-hero__list');
   let slider_progressbar = document.createElement('div');
-  slider_progressbar.classList.add('u-project-slider--progressbar');
+  slider_progressbar.classList.add('u-hero-slider--progressbar');
 
 
   // Инициализация Swiper
-  const projectSliderMob = new Swiper(slider, {
-    modules: [SwiperGL],
-    effect: 'gl',
-    // SwiperGL module parameters
-    gl: {
-      // specify required shader effect
-      shader: 'morph-x',
-    },
+  const HeroSliderMob = new Swiper(slider, {
+    // modules: [SwiperGL],
+    // effect: 'gl',
+    // // SwiperGL module parameters
+    // gl: {
+    //   // specify required shader effect
+    //   shader: 'morph-x',
+    // },
     createElements: true,
     slideClass: 'card',
     grabCursor: true,
@@ -26,7 +26,7 @@ let activateProjectSliderMob = (swiper_item) => {
     allowTouchMove: true,
     uniqueNavElements: true,
     loop: true,
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 8,
     mousewheel: {
       forceToAxis: true,
@@ -95,7 +95,7 @@ let u_hero= document.querySelectorAll('.u-hero');
 
 u_hero.forEach(section => {
   if (window.matchMedia('(max-width: 640px)').matches) {
-    activateProjectSliderMob(section)
+    activateHeroSliderMob(section)
       let heroList = document.querySelector('.u-hero__list');
       function stopAnimation() {
         // Завершаем анимацию после текущего цикла

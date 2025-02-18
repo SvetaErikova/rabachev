@@ -2,6 +2,12 @@
   height: 100svh
   z-index: 2
   position: relative
+  @media (max-width: 640px)
+    height: max-content
+    width: 100%
+    aspect-ratio: 375/280
+    order: 1
+    margin-top: calc(var(--u-ritmo-verticale-vw) * 5)
   img
     object-fit: cover
     object-position: center

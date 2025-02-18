@@ -18,8 +18,7 @@
   max-width: 100%;
   overflow: hidden;
 }
-.swiper-gl .swiper-slide,
-.swiper-gl swiper-slide {
+.swiper-gl .swiper-slide{
   position: relative;
 }
 .swiper-gl .swiper-gl-image {
