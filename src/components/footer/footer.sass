@@ -1,14 +1,104 @@
 .footer
-  background-color: #dddddd
-  margin-top: -100lvh
-  height: calc(var(--footerHeight) + 100vh)
+  background: linear-gradient(90deg, #E1DEDE 0%, #ECECEC 100%)
+  //margin-top: -100lvh
+  //height: calc(var(--footerHeight) + 100vh)
 
   &__container
-    position: sticky
-    top: calc( 100vh - var(--footerHeight))
+    padding: calc(var(--u-ritmo-verticale-vw) * 3) calc(var(--u-ritmo-verticale-vw) * 1)
+    //position: sticky
+    //top: calc( 100vh - var(--footerHeight))
+    display: grid
+    align-items: start
+    gap: calc(var(--u-ritmo-verticale-vw) * 2)
+    grid-template-columns: auto auto
+    @media (min-width: 641px)
+      align-items: inherit
+      padding: calc(var(--u-ritmo-verticale-vw) * 3)
+      grid-template-columns: repeat(3, 1fr)
+  &__col
 
-.footer
-  position: relative
-  z-index: 1
-  background-color: #f0f0f0
+    &-1
+
+      display: flex
+      flex-direction: column
+      justify-content: center
+      gap: calc(var(--u-ritmo-verticale-vw) * 6.875)
+      @media (max-width: 640px)
+        grid-column: 2
+        grid-row: 1
+      .footer__col_img
+        max-width: calc(var(--u-ritmo-verticale-vw) * 23.25)
+        aspect-ratio: 186/176
+        @media (max-width: 640px)
+          display: none
+        img
+          mix-blend-mode: exclusion
+      .footer__col_links
+        text-align: right
+        @media (min-width: 641px)
+          text-align: center
+          margin-left: calc(var(--u-ritmo-verticale-vw) * 11.5)
+    &-2
+      @media (max-width: 640px)
+        grid-column: span 2
+        grid-row: 2
+    &-3
+
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+      gap: calc(var(--u-ritmo-verticale-vw) * 2)
+      @media (max-width: 640px)
+        grid-column: 1
+        grid-row: 1
+      .footer__col_img
+        display: flex
+        width: calc(var(--u-ritmo-verticale-vw) * 12)
+        height: auto
+        aspect-ratio: 1/1
+        @media (min-width: 641px)
+          aspect-ratio: 152/144
+          max-width: calc(var(--u-ritmo-verticale-vw) * 19)
+        img
+          mix-blend-mode: luminosity
+      .footer__col_links
+        @media (min-width: 641px)
+          margin-bottom: calc(var(--u-ritmo-verticale-vw) * 3.5)
+    &_links
+      display: flex
+      flex-direction: column
+      text-transform: uppercase
+      gap: calc(var(--u-ritmo-verticale-vw) * 1)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 2)
+      @media (min-width: 641px)
+        flex-direction: row
+        gap: calc(var(--u-ritmo-verticale-vw) * 1.5)
+        font-size: calc(var(--u-ritmo-verticale-vw) * 2)
+        line-height: calc(var(--u-ritmo-verticale-vw) * 3)
+  &__title
+    font-family: 'Kharms Display'
+    color: transparent
+    -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.15) var(--color-text)
+    letter-spacing:  calc(var(--u-ritmo-verticale-vw) * 0.1 * -1)
+    font-size: calc(var(--u-ritmo-verticale-vw) * 6.5)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 7)
+    white-space: nowrap
+    grid-column: span 2
+    text-align: center
+    @media (min-width: 641px)
+      letter-spacing:  calc(var(--u-ritmo-verticale-vw) * 0.3 * -1)
+      -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.15) #fff
+      mix-blend-mode: difference
+      font-size: calc(var(--u-ritmo-verticale-vw) * 20)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 20)
+      position: absolute
+      translate: -50% -50%
+      top: 56%
+      left: 50%
+
+//.footer
+//  position: relative
+//  z-index: 1
+//  background-color: #f0f0f0
 

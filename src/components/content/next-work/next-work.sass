@@ -1,28 +1,35 @@
 .next-work
-  display: flex
-  gap: calc(var(--u-ritmo-verticale-vw) * 2)
-  align-items: flex-end
+  padding-top: calc(var(--u-ritmo-verticale-vw) * 6)
   position: relative
   z-index: 2
-  background-color: #F5F5F5
-  color: #F5F5F5
-  padding: calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 1)
+  display: block
+  background-color: #FFFFFF
   @media (min-width: 641px)
-    align-items: center
-    color: #FFFFFF
-    padding: calc(var(--u-ritmo-verticale-vw) * 2.5) calc(var(--u-ritmo-verticale-vw) * 4)
-
-  &:after
-    content: ''
-    position: absolute
-    inset: 0
-    width: 100%
-    background-color: #2E2728
-    z-index: -1
+    padding-top: calc(var(--u-ritmo-verticale-vw) * 15)
+  &__container
+    position: relative
+    z-index: 2
+    display: flex
+    gap: calc(var(--u-ritmo-verticale-vw) * 2)
+    align-items: flex-end
+    background-color: #F5F5F5
+    color: #F5F5F5
+    padding: calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 1)
     @media (min-width: 641px)
-      width: var(--progressValue, 0)
-  & > div
-    mix-blend-mode: difference
+      align-items: center
+      color: #FFFFFF
+      padding: calc(var(--u-ritmo-verticale-vw) * 2.5) calc(var(--u-ritmo-verticale-vw) * 4)
+    &:after
+      content: ''
+      position: absolute
+      inset: 0
+      width: 100%
+      background-color: #2E2728
+      z-index: -1
+      @media (min-width: 641px)
+        width: var(--progressValue, 0)
+    & > div
+      mix-blend-mode: difference
   &__text
     @media (max-width: 640px)
       display: none

@@ -3,8 +3,7 @@
   position: relative
   overflow: hidden
   z-index: 2
-  perspective: 1000px
-
+  //perspective: 1000px
   &__container
     display: flex
     flex-direction: column
@@ -12,7 +11,7 @@
     @media (min-width: 641px)
       justify-content: space-between
       flex-direction: row
-
+      flex-wrap: wrap
   &__image
     @media (min-width: 641px)
       width: calc( var(--u-ritmo-verticale-vw) * 85.25)
@@ -43,6 +42,11 @@
     @media (min-width: 641px)
       line-height: calc( var(--u-ritmo-verticale-vw) * 8)
       font-size: calc( var(--u-ritmo-verticale-vw) * 8)
+  &__note
+    text-align: right
+    line-height: calc( var(--u-ritmo-verticale-vw) * 3)
+    font-size: calc( var(--u-ritmo-verticale-vw) * 3)
+    letter-spacing: calc(var(--u-ritmo-verticale-vw) * 0.15 * -1)
   @media (min-width: 641px)
     .card
       position: absolute
@@ -58,3 +62,5 @@
   @media (max-width: 640px)
      .slider_controls
 
+.pin-spacer
+  margin: 0 !important
