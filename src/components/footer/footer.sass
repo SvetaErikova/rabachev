@@ -1,12 +1,13 @@
 .footer
+  position: relative
   background: linear-gradient(90deg, #E1DEDE 0%, #ECECEC 100%)
-  //margin-top: -100lvh
-  //height: calc(var(--footerHeight) + 100vh)
+  margin-top: -100lvh
+  height: calc(var(--footerHeight) + 100vh)
 
   &__container
     padding: calc(var(--u-ritmo-verticale-vw) * 3) calc(var(--u-ritmo-verticale-vw) * 1)
-    //position: sticky
-    //top: calc( 100vh - var(--footerHeight))
+    position: sticky
+    top: calc( 100vh - var(--footerHeight))
     display: grid
     align-items: start
     gap: calc(var(--u-ritmo-verticale-vw) * 2)

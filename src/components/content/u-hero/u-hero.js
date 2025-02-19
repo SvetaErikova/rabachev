@@ -1,8 +1,8 @@
 
 let activateHeroSliderMob = (swiper_item) => {
-  // swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
-  //   img.classList.add('swiper-gl-image');
-  // });
+  swiper_item.querySelectorAll('.u-hero__card .card__image img').forEach(img => {
+    img.classList.add('swiper-gl-image');
+  });
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-hero__list');
   let slider_progressbar = document.createElement('div');
@@ -11,13 +11,13 @@ let activateHeroSliderMob = (swiper_item) => {
 
   // Инициализация Swiper
   const HeroSliderMob = new Swiper(slider, {
-    // modules: [SwiperGL],
-    // effect: 'gl',
-    // // SwiperGL module parameters
-    // gl: {
-    //   // specify required shader effect
-    //   shader: 'morph-x',
-    // },
+    modules: [SwiperGL],
+    effect: 'gl',
+    // SwiperGL module parameters
+    gl: {
+      // specify required shader effect
+      shader: 'morph-x',
+    },
     createElements: true,
     slideClass: 'card',
     grabCursor: true,

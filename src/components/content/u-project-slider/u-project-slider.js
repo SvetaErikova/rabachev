@@ -1,7 +1,5 @@
 let activateProjectSliderDesk = (swiper_item) => {
-  swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
-    img.classList.add('swiper-gl-image');
-  });
+
 
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-project-slider__list');
@@ -59,7 +57,9 @@ let activateProjectSliderDesk = (swiper_item) => {
 
     });
   }
-
+  swiper_item.querySelectorAll('.u-project-slider__card .card__image img').forEach(img => {
+    img.classList.add('swiper-gl-image');
+  });
   // Инициализация основного слайдера
   const projectSliderDesk = new Swiper(slider, {
     modules: [SwiperGL],

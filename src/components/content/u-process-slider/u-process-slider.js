@@ -59,8 +59,7 @@ let activateProcessSlider = (swiper_item) => {
         updatePagination(this); // Обновление пагинации
       },
     },
-  });
-  // swiper.update();
+  })
   // Функция для обновления пагинации
   function updatePagination(swiper) {
     const currentSlide = swiper.realIndex + 1; // Текущий слайд (начинаем с 1)
