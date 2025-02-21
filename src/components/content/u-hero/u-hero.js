@@ -56,9 +56,9 @@ function initAnimations() {
     let speed = 0.3 + Math.random() * 1; // Случайная скорость от 0.5 до 1.5
     gsap.fromTo(card, {
       scale: 0.7,
-      y: -300, // Смещение карточки вверх при прокрутке
+      y: -300,
     }, {
-      y: 0, // Смещение карточки вверх при прокрутке
+      y: 0,
       scale: 1,
       duration: speed, // Случайная скорость
       scrollTrigger: {
@@ -68,6 +68,9 @@ function initAnimations() {
         toggleActions: "play none reverse none",
         scrub: true, // Плавное следование за прокруткой в обе стороны
         markers: false, // Включите маркеры для отладки
+        onStart: () => {
+          document.querySelector('.pin-spacer').style.zIndex = 3;
+        }
       },
     });
   });

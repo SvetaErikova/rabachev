@@ -86,8 +86,14 @@ html
 @media (min-width: 1921px)
   .container
     padding: 0 calc(var(--u-ritmo-verticale-vw) * 16)
-main > div:not(:first-of-type)
-  margin: calc(var(--u-ritmo-verticale-vw) * 6) 0
+
+@media (max-width: 640px)
+  main > div:not(:first-of-type)
+    margin: calc(var(--u-ritmo-verticale-vw) * 6) 0
+@media (min-width: 641px)
+  main > div:nth-child(n + 3)
+    margin: calc(var(--u-ritmo-verticale-vw) * 6) 0
+
 @media (max-width: 640px)
   html
     --u-ritmo-verticale-vw: 2.133333333333333vw

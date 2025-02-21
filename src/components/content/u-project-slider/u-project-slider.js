@@ -54,6 +54,7 @@ let activateProjectSliderDesk = (swiper_item) => {
       freeMode: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
+      speed: 2000,
 
     });
   }

@@ -43,6 +43,7 @@ html(lang="ru-RU")
     <![endif]-->
   body(data-theme="white")
     .page
+      include ../components/content/1_preloader/1_preloder
       include ../components/header/header
       main
         block content
@@ -51,8 +52,7 @@ html(lang="ru-RU")
 
 
         include ../components/content/full-image/full-image
-        canvas.back-canvas
-        .blur-canvas
+
     script(src="./assets/js/libs.min.js")
     script(src="./assets/js/main.js")
     block script

@@ -1,0 +1,24 @@
+.preloader
+  position: fixed
+  height: 100lvh
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #FFFFFF
+  z-index: 100
+  //transition: 0.3s ease-in-out
+  &__logo
+    filter: blur(10px)
+    font-family: 'Kharms Display'
+    display: block
+    z-index: 5
+    font-size: calc(var(--u-ritmo-verticale-vw) * 5)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+    letter-spacing: -0.02em
+    -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.1875) var(--color-text)
+    color: transparent
+    @media (min-width: 641px)
+      display: block
+      font-size: calc(var(--u-ritmo-verticale-vw) * 10)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 11)
