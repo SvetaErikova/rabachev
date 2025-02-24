@@ -9,4 +9,5 @@ function footerSticky(){
 
 document.addEventListener("DOMContentLoaded", (event) => {
   footerSticky()
+
 });

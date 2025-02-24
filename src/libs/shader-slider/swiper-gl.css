@@ -26,10 +26,11 @@
 /*}*/
 .swiper-gl > canvas {
   position: absolute;
-  left: 0;
-  top: 0;
+  left:  50%;
+  top: 50%;
   width: 100%;
   height: 100%;
+  translate: -50% -50%;
 }
 
 .swiper-gl-image {
