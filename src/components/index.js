@@ -44,7 +44,7 @@ if (window.matchMedia('(max-width: 640px)').matches) {
     return themes[nextIndex];
   }
   // Обработчик клика на кнопку
-  document.querySelector('.u-header__theme').addEventListener('click', function() {
+  document.querySelector('.u-hero__btn-theme').addEventListener('click', function() {
     let currentTheme = document.body.dataset.theme;
     let nextTheme = getNextTheme(currentTheme);
     setTheme(nextTheme); // Устанавливаем следующую тему

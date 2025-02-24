@@ -58,7 +58,7 @@ let activateProjectSliderDesk = (swiper_item) => {
 
     });
   }
-  swiper_item.querySelectorAll('.u-project-slider__card .card__image img').forEach(img => {
+  swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
     img.classList.add('swiper-gl-image');
   });
   // Инициализация основного слайдера

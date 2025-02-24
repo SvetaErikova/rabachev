@@ -1,26 +1,32 @@
-.glassy-overlay {
-
-}
-.back-canvas{
-  mix-blend-mode: hard-light;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  height: 110vh;
-  width: 100%;
-}
+.back-canvas,
 .blur-canvas{
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(50px);
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
-.block-gradients-bck{
-  position: absolute;
-  inset: 0;
+@media (min-width: 641px){
+  .back-canvas{
+    display: block;
+    mix-blend-mode: hard-light;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 110vh;
+    width: 100%;
+  }
+  .blur-canvas{
+    display: block;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(50px);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .block-gradients-bck{
+    position: absolute;
+    inset: 0;
+  }
+
 }
