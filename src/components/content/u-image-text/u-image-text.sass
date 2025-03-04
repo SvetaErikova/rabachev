@@ -3,23 +3,29 @@
   position: relative
   overflow: hidden
   z-index: 2
+  padding: calc(var(--u-ritmo-verticale-vw) * 6) 0
   @media (min-width: 641px)
-    margin: calc(var(--u-ritmo-verticale-vw) * 6) 0
-  //perspective: 1000px
+    //height: 100vh
+  @media (min-width: 641px)
+    padding: calc(var(--u-ritmo-verticale-vw) * 6) 0
   &__container
     display: flex
     flex-direction: column
     gap: calc( var(--u-ritmo-verticale-vw) * 2)
     @media (min-width: 641px)
-      justify-content: space-between
-      flex-direction: row
-      flex-wrap: wrap
+      display: grid
+      grid-template-columns: calc( var(--u-ritmo-verticale-vw) * 90) 1fr
+      grid-template-rows: 1fr max-content
+      height: calc(100vh - (var(--u-ritmo-verticale-vw) * 6) * 2)
   &__image
     @media (min-width: 641px)
-      width: calc( var(--u-ritmo-verticale-vw) * 85.25)
+      //width: calc( var(--u-ritmo-verticale-vw) * 85.25)
       position: relative
-      aspect-ratio: 1/1
+      width: 100%
       height: 100%
+      //height: 80vh
+    img
+      object-fit: cover
   &__content
     display: flex
     flex-direction: column
@@ -45,10 +51,31 @@
       line-height: calc( var(--u-ritmo-verticale-vw) * 8)
       font-size: calc( var(--u-ritmo-verticale-vw) * 8)
   &__note
-    text-align: right
+    color: #737373
     line-height: calc( var(--u-ritmo-verticale-vw) * 3)
     font-size: calc( var(--u-ritmo-verticale-vw) * 3)
     letter-spacing: calc(var(--u-ritmo-verticale-vw) * 0.15 * -1)
+    //overflow: hidden
+    @media (min-width: 641px)
+      text-align: right
+    div
+      position: relative
+      @media (max-width: 640px)
+        height: 2em
+    @media (min-width: 641px)
+      grid-column: 2
+      height: 1em
+    p
+      inset: 0
+      position: absolute
+
+    @media (max-width: 640px)
+      display: grid
+      align-items: center
+      grid-template-columns: 1fr auto
+      gap: 0 calc( var(--u-ritmo-verticale-vw) * 1)
+      .slider_controls
+        grid-column: 2
   @media (min-width: 641px)
     .card
       position: absolute

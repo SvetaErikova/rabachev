@@ -103,7 +103,7 @@ html
     --u-ritmo-verticale-vw: calc(.523560209424084vw/1.4)
 
 
-img
+img, video
   width: 100%
   height: 100%
 
@@ -174,3 +174,9 @@ html.lenis
   body
     overflow: hidden
 
+.-desk
+  @media (max-width: 640px)
+    display: none !important
+.-mob
+  @media (min-width: 641px)
+    display: none !important

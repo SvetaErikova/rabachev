@@ -11,3 +11,15 @@
   img
     object-fit: cover
     object-position: center
+  &__title
+    display: none
+    @media (min-width: 641px)
+      display: block
+      position: absolute
+      right: calc(var(--u-ritmo-verticale-vw) * 9)
+      bottom: calc(var(--u-ritmo-verticale-vw) * 4)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 8)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 9)
+      font-weight: 700
+      mix-blend-mode: difference
+      text-transform: uppercase

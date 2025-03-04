@@ -99,6 +99,6 @@ function GradientsBack(){
   }
 }
 
-if (window.matchMedia('(min-width: 641px)').matches) {
-  GradientsBack()
-}
+// if (window.matchMedia('(min-width: 641px)').matches) {
+//   GradientsBack()
+// }

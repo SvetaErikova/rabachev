@@ -24,7 +24,8 @@
     color: #FFFFFF
     line-height: calc(var(--u-ritmo-verticale-vw) * 6)
     letter-spacing: -0.02em
-    padding-left: calc(var(--u-ritmo-verticale-vw) * 6)
+    translate: calc(var(--u-ritmo-verticale-vw) * 6)
+    transition: var(--transition)
     @media (min-width: 641px)
       display: block
       padding-left: calc(var(--u-ritmo-verticale-vw) * 4)
@@ -56,31 +57,86 @@
   //.u-header
   .menu
     display: flex
-    justify-content: space-between
-    gap:  calc(var(--u-ritmo-verticale-vw)* 1)
+    gap:  calc(var(--u-ritmo-verticale-vw)* 17)
     position: absolute
+    translate: 0 0
     left: auto
-    right: calc(var(--u-ritmo-verticale-vw)* 13.5)
+    right: calc(var(--u-ritmo-verticale-vw)* 38)
     top: calc(var(--headerHeight) + calc(var(--u-ritmo-verticale-vw)* 1))
-    width: calc(var(--u-ritmo-verticale-vw)* 65.375)
+    //width: calc(var(--u-ritmo-verticale-vw)* 41)
+    transition: var(--transition)
+    text-transform: uppercase
+    font-size: calc(var(--u-ritmo-verticale-vw)* 2)
+    line-height: calc(var(--u-ritmo-verticale-vw)* 3)
+    &__nav
+      display: flex
+      gap: calc(var(--u-ritmo-verticale-vw)* 6)
+      height: calc(var(--u-ritmo-verticale-vw)* 3)
+      color: var(--color-secondary-text)
+      opacity: 0
+      pointer-events: none
+      transition: var(--transition)
     &__item
-      text-transform: uppercase
-      font-size: calc(var(--u-ritmo-verticale-vw)* 2)
-      line-height: calc(var(--u-ritmo-verticale-vw)* 3)
+
       letter-spacing: 0.03em
       &__title
         height: calc(var(--u-ritmo-verticale-vw)* 3)
         color: var(--color-secondary-text)
+        display: flex
+        align-items: center
+        gap: calc(var(--u-ritmo-verticale-vw)* 1)
+        .icon-arrow
+          opacity: 0
+          display: inline-block
+          width: 1em
+          height: 1em
+          transition: var(--transition)
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M2.5 5.625L10 14.375L17.5 5.625H2.5Z' fill='white'/%3E%3C/svg%3E")
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='%235E5E5E'%3E%3Cpath d='M2.5 5.625L10 14.375L17.5 5.625H2.5Z' fill='%235E5E5E'/%3E%3C/svg%3E")
+        .-col-2
+          display: grid
+          grid-template-columns: repeat(2, 1fr)
+          gap: 0 calc(var(--u-ritmo-verticale-vw)* 6)
       &__list
         display: flex
         flex-direction: column
+
     &__links
       display: flex
       flex-direction: column
       filter: invert(1)
+      position: absolute
+      top: 100%
+      transition: var(--transition)
       a
         &.is_active
           font-weight: 700
+
+.u-header.is_scroll
+  @media (min-width: 641px)
+    .menu
+      //translate: 0 -50%
+      top: 50%
+      &__nav
+        opacity: 1
+        pointer-events: auto
+      &__links
+        opacity: 0
+        pointer-events: none
+
+    .menu__item__title
+      .icon-arrow
+        opacity: 1
+      &:hover
+        .icon-arrow
+          scale:  1 -1
+        & .menu__links
+          opacity: 1
+          pointer-events: auto
+  @media (max-width: 640px)
+    .u-header__logo
+      translate: 0
+
 .u-header__menu
   display: none
 @media (max-width: 640px)

@@ -47,8 +47,25 @@ let activateImageTextSliderMob = (swiper_item) => {
 
   // Добавляем прогресс-бар
   if (swiper_item && swiper_item.closest('.u-image-text')) {
-    slider.append(slider_controls);
+    swiper_item.querySelector('.u-image-text__note').append(slider_controls);
   }
+  // Массив с текстами для каждого слайда
+  const slideTexts = [
+    "Disposable in the Vasileostrovskaya metro station in Saint Petersburg",
+    "He is a firm believer in the need to give contemporary photography a new look and pursues his goals day after day.",
+    "Results and exhibitions"
+  ];
+  // Находим элемент для отображения текста
+  const noteTextElement = swiper_item.querySelector('.u-image-text__note div p');
+
+  // Обновляем текст при изменении слайда
+  projectSliderMob.on('slideChange', function () {
+    const activeIndex = projectSliderMob.realIndex; // Получаем индекс активного слайда
+    noteTextElement.textContent = slideTexts[activeIndex]; // Обновляем текст
+  });
+
+  // Инициализация текста для первого слайда
+  noteTextElement.textContent = slideTexts[0];
 
 };
 let u_image_text= document.querySelectorAll('.u-image-text');

@@ -3,7 +3,7 @@ module.exports = function() {
     $.browserSync.init({
         server: $.path.dist,
         https: false,
-        open: false
+        open: true
     });
 });
 }

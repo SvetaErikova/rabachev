@@ -7,11 +7,11 @@
     padding: calc(var(--u-ritmo-verticale-vw) * 3) calc(var(--u-ritmo-verticale-vw) * 1) calc(var(--u-ritmo-verticale-vw) * 2.5)
     position: sticky
     top: calc( 100vh - var(--footerHeight))
-    display: grid
-    align-items: start
     gap: calc(var(--u-ritmo-verticale-vw) * 2)
-    grid-template-columns: auto auto
+    display: flex
+    flex-direction: column
     @media (min-width: 641px)
+      display: grid
       align-items: inherit
       padding: calc(var(--u-ritmo-verticale-vw) * 3)
       grid-template-columns: repeat(3, 1fr)
@@ -22,15 +22,22 @@
       justify-content: center
       gap: calc(var(--u-ritmo-verticale-vw) * 6.875)
       @media (max-width: 640px)
-        grid-column: 2
+        grid-column: span 2
         grid-row: 1
       .footer__col_img
         max-width: calc(var(--u-ritmo-verticale-vw) * 23.25)
         aspect-ratio: 186/176
+        mix-blend-mode: exclusion
+        position: relative
         @media (max-width: 640px)
           display: none
-        img
+        &:after
+          content: ''
+          position: absolute
+          inset: 0
+          pointer-events: none
           mix-blend-mode: exclusion
+          background-color: #fff
       .footer__col_links
         text-align: right
         @media (min-width: 641px)
@@ -41,29 +48,37 @@
         grid-column: span 2
         grid-row: 2
     &-3
-      display: flex
-      align-items: flex-end
-      justify-content: space-between
-      gap: calc(var(--u-ritmo-verticale-vw) * 2)
-      @media (max-width: 640px)
-        grid-column: 1
-        grid-row: 1
-      .footer__col_img
+      display: none
+      @media (min-width: 641px)
         display: flex
-        width: calc(var(--u-ritmo-verticale-vw) * 12)
-        height: auto
-        aspect-ratio: 1/1
-        @media (min-width: 641px)
+        align-items: flex-end
+        justify-content: space-between
+        gap: calc(var(--u-ritmo-verticale-vw) * 2)
+        @media (max-width: 640px)
+          grid-column: 1
+          grid-row: 1
+        .footer__col_img
+          display: flex
+          height: auto
+          position: relative
           aspect-ratio: 152/144
-          max-width: calc(var(--u-ritmo-verticale-vw) * 19)
-        img
-          mix-blend-mode: luminosity
+          width: calc(var(--u-ritmo-verticale-vw) * 19)
+          &:after
+            content: ''
+            position: absolute
+            inset: 0
+            pointer-events: none
+            mix-blend-mode: color
+            background-color: #fff
       .footer__col_links
         @media (min-width: 641px)
           margin-bottom: calc(var(--u-ritmo-verticale-vw) * 3.5)
+    &_img
+      video
+        object-fit: cover
     &_links
       display: flex
-      flex-direction: column
+      justify-content: center
       text-transform: uppercase
       gap: calc(var(--u-ritmo-verticale-vw) * 1)
       font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
@@ -110,9 +125,4 @@
       mix-blend-mode: difference
       z-index: 1
 
-
-//.footer
-//  position: relative
-//  z-index: 1
-//  background-color: #f0f0f0
 

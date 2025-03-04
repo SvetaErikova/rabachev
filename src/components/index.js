@@ -19,37 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (activeButton) activeButton.classList.add('is_active');
 });
 
-// Обработчик для кнопок переключения темы комп
-if (window.matchMedia('(min-width: 641px)').matches) {
-  document.querySelectorAll('button[data-theme]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      let selectedTheme = e.currentTarget.dataset.theme;
-      setTheme(selectedTheme); // Устанавливаем выбранную тему
 
-      // Убираем активный класс у всех кнопок и добавляем его к текущей
-      document.querySelectorAll('button[data-theme]').forEach(t => {
-        t.classList.toggle('is_active', t === e.currentTarget);
-      });
-    });
-  });
-}
-
-// Обработчик для кнопок переключения темы моб
-if (window.matchMedia('(max-width: 640px)').matches) {
-  // Функция для получения следующей темы
-  function getNextTheme(currentTheme) {
-    let themes = ['white', 'dark', 'color'];
-    let currentIndex = themes.indexOf(currentTheme);
-    let nextIndex = (currentIndex + 1) % themes.length; // Переход к следующей теме по кругу
-    return themes[nextIndex];
-  }
-  // Обработчик клика на кнопку
-  document.querySelector('.u-hero__btn-theme').addEventListener('click', function() {
-    let currentTheme = document.body.dataset.theme;
-    let nextTheme = getNextTheme(currentTheme);
-    setTheme(nextTheme); // Устанавливаем следующую тему
-  });
-}
 
 // Обработчик для текста с анимацией hover
 document.querySelectorAll('.text_roll').forEach(link => {

@@ -1,4 +1,4 @@
-let next_work = document.querySelector('.next-work');
+let next_work = document.querySelector('.next-work__container');
 if(next_work && window.matchMedia('(min-width: 641px)').matches){
     let progress_link = next_work
     let progress = 0;
