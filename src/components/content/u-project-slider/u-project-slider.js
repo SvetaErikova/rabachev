@@ -50,11 +50,11 @@ let activateProjectSliderDesk = (swiper_item) => {
     // Инициализация thumbs слайдера
     thumbs = new Swiper(thumbsContainer, {
       spaceBetween: 24,
-      slidesPerView: 2.5,
+      slidesPerView: 3.5,
       freeMode: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      speed: 2000,
+      speed: 1000,
 
     });
   }
