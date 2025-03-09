@@ -4,17 +4,23 @@ var k="1.1.14";function w(r,t,e){return Math.max(r,Math.min(t,e))}function _(r,t
 
 // Initialize
 // Lenis
-const lenis = new Lenis({
+function lenisInitalize(){
+  const lenis = new Lenis({
     duration: 1.5,
-});
+  });
 
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 
 
+}
 
+
+if (window.matchMedia('(min-width: 641px)').matches) {
+  lenisInitalize()
+}
