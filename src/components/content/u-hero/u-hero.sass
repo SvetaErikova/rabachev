@@ -4,7 +4,7 @@
   background-color: var(--bck-color)
   transition: 0.18s background-color ease-in-out
   @media (max-width: 640px)
-    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 8)
+    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 4)
     &__btn-theme
       position: absolute
       z-index: 100
@@ -36,10 +36,9 @@
       pointer-events: none
       transition: var(--transition)
       opacity: 0
-      z-index: 2
+      z-index: 3
     &[data-grid="ON"]
-      &:after
-        opacity: 1
+      &:after,
       &:before
         opacity: 1
   &__container

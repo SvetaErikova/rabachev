@@ -21,9 +21,7 @@ let activateImageTextSliderMob = (swiper_item) => {
   const projectSliderMob = new Swiper(slider, {
     modules: [SwiperGL],
     effect: 'gl',
-    // SwiperGL module parameters
     gl: {
-      // specify required shader effect
       shader: 'morph-x',
     },
     createElements: true,
@@ -42,6 +40,10 @@ let activateImageTextSliderMob = (swiper_item) => {
     navigation: {
       nextEl: swiper_nav_next,
       prevEl: swiper_nav_prev,
+    },
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 2
     },
   });
 
@@ -72,7 +74,5 @@ let u_image_text= document.querySelectorAll('.u-image-text');
 u_image_text.forEach(section => {
   if (window.matchMedia('(max-width: 640px)').matches) {
     activateImageTextSliderMob(section)
-
   }
-
 })

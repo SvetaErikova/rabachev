@@ -49,6 +49,10 @@ let activateProcessSlider = (swiper_item) => {
           spaceBetween: 8
         }
       },
+      lazy: {
+        loadPrevNext: true,
+        loadPrevNextAmount: 4
+      },
       on: {
         init: function () {
           updatePagination(this); // Обновление пагинации

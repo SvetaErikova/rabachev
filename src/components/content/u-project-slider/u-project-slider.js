@@ -1,6 +1,4 @@
 let activateProjectSliderDesk = (swiper_item) => {
-
-
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-project-slider__list');
 
@@ -55,7 +53,10 @@ let activateProjectSliderDesk = (swiper_item) => {
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
       speed: 1000,
-
+      lazy: {
+        loadPrevNext: true,
+        loadPrevNextAmount: 4
+      },
     });
   }
   swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
@@ -96,6 +97,10 @@ let activateProjectSliderDesk = (swiper_item) => {
     thumbs: isMobile ? null : { // Подключаем thumbs только для десктопов
       swiper: thumbs,
     },
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 2
+    },
     on: {
       init: function () {
         updatePagination(this); // Обновление пагинации
@@ -117,7 +122,6 @@ let activateProjectSliderDesk = (swiper_item) => {
   swiper_item.querySelector('.container').append(slider_controls);
 };
 
-// Инициализация всех слайдеров на странице
 let u_project_slider = document.querySelectorAll('.u-project-slider');
 u_project_slider.forEach(section => {
   activateProjectSliderDesk(section);

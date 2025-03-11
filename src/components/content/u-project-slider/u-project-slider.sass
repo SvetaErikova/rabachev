@@ -4,13 +4,15 @@
   overflow: hidden
   display: flex
   flex-direction: column
-  padding: 0 0 calc(var(--u-ritmo-verticale-vw) * 6)
+  padding: 0 0 calc(var(--u-ritmo-verticale-vw) * 4)
+  @media (min-width: 641px)
+    padding: 0 0 calc(var(--u-ritmo-verticale-vw) * 6)
   .container
     display: flex
     flex-direction: column
     @media (min-width: 641px)
       display: grid
-      grid-template-rows: 1fr calc(var(--u-ritmo-verticale-vw) * 35) calc(var(--u-ritmo-verticale-vw) * 7.5)
+      //grid-template-rows: 1fr calc(var(--u-ritmo-verticale-vw) * 35) auto
       gap: calc(var(--u-ritmo-verticale-vw) * 2)
       grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 76) 1fr
   &__title
@@ -56,7 +58,7 @@
       &-thumbs
         overflow: hidden
         grid-column: 2
-        grid-row: 2/ span 3
+        grid-row: 2/ span 2
         width: calc(100% + 100px)
         margin-top: auto
         img
@@ -78,6 +80,7 @@
       margin-bottom: 0
       grid-row: 1
       grid-column: 2
+      margin-top: calc(var(--u-ritmo-verticale-vw) * 1.5)
     h3
       text-transform: uppercase
       font-weight: 700
