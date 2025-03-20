@@ -4361,7 +4361,7 @@
      SOFTWARE.
      */
 
-    // 
+    //
     const F2 =  0.5 * (Math.sqrt(3.0) - 1.0);
     const G2 =  (3.0 - Math.sqrt(3.0)) / 6.0;
     // I'm really not sure why this | 0 (basically a coercion to int)

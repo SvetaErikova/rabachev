@@ -27,6 +27,26 @@ document.querySelectorAll('.text_roll').forEach(link => {
   span.dataset.hover = span.textContent;
 });
 
+const textElement = document.querySelector('.js-more-text');
+if(textElement){
+  // Список слов для перечисления
+  const words = ["things", "cups", "masks", "bottles", "packaging"];
+  let currentIndex = 0;
+  // Функция для обновления текста
+  function updateText() {
+    if (textElement) {
+      textElement.classList.add('fade'); // Начинаем исчезновение
+      setTimeout(() => {
+        textElement.textContent = words[currentIndex];
+        textElement.classList.remove('fade'); // Показываем новое слово
+        currentIndex = (currentIndex + 1) % words.length;
+      }, 500); // Ждем завершения анимации исчезновения
+    }
+  }
 
+// Запускаем обновление текста каждые 2600 мс
+  if (textElement) {
+    setInterval(updateText, 2600);
+  }
 
-
+}

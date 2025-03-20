@@ -13,12 +13,12 @@
     @media (min-width: 641px)
       display: grid
       //grid-template-rows: 1fr calc(var(--u-ritmo-verticale-vw) * 35) auto
-      gap: calc(var(--u-ritmo-verticale-vw) * 2)
+      gap: calc(var(--u-ritmo-verticale-vw) * 4)
       grid-template-columns: calc(var(--u-ritmo-verticale-vw) * 76) 1fr
   &__title
     display: none
     @media (min-width: 641px)
-      margin: calc(var(--u-ritmo-verticale-vw) * 11) auto  calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 42)
+      margin: calc(var(--u-ritmo-verticale-vw) * 12.5) auto  calc(var(--u-ritmo-verticale-vw) * 2) calc(var(--u-ritmo-verticale-vw) * 42)
       grid-column: span 2
       display: flex
       align-items: flex-end
@@ -35,6 +35,7 @@
         font-weight: 700
         font-size: calc(var(--u-ritmo-verticale-vw) * 4)
         line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+        letter-spacing: 0.03em
 
 
   &__list
@@ -48,12 +49,15 @@
     @media (min-width: 641px)
       grid-column: 1
       grid-row: span 2
+      .card__image
+        aspect-ratio: 612/688
     @media (max-width: 640px)
       width: 100%
       height: auto
       aspect-ratio: 360/362
       margin-bottom: calc(var(--u-ritmo-verticale-vw) * 2)
       order: 1
+
     @media (min-width: 641px)
       &-thumbs
         overflow: hidden
@@ -76,6 +80,10 @@
           border: 2px solid #fed101
   &__content
     margin-bottom: calc(var(--u-ritmo-verticale-vw) * 4)
+    display: flex
+    flex-direction: column
+    gap: calc(var(--u-ritmo-verticale-vw) * 1.5)
+
     @media (min-width: 641px)
       margin-bottom: 0
       grid-row: 1
@@ -86,18 +94,19 @@
       font-weight: 700
       font-size: calc(var(--u-ritmo-verticale-vw) * 3)
       line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+      letter-spacing: 0.03em
       @media (min-width: 641px)
         font-size: calc(var(--u-ritmo-verticale-vw) * 8)
         line-height: calc(var(--u-ritmo-verticale-vw) * 9)
     p
       font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
       line-height: calc(var(--u-ritmo-verticale-vw) * 2.5)
-      letter-spacing: calc(var(--u-ritmo-verticale-vw) * 0.1 * -1)
+      letter-spacing: -0.06em
       @media (min-width: 641px)
         font-size: calc(var(--u-ritmo-verticale-vw) * 5)
         line-height: calc(var(--u-ritmo-verticale-vw) * 5)
-        margin-left: calc(var(--u-ritmo-verticale-vw) * 14.5)
-      a
+        margin-left: calc(var(--u-ritmo-verticale-vw) * 16)
+      .js-more-text
         color: #0128E4
   .slider_controls
     @media (max-width: 640px)

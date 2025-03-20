@@ -71,8 +71,8 @@ function GradientsBack(){
     });
 
     var gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, "rgba(160, 93, 134,1)");
-    gradient.addColorStop(1, "rgba(57, 34, 115,1)");
+    gradient.addColorStop(0, "rgba(255, 230, 125,1)");
+    gradient.addColorStop(1, "rgba(254, 215, 35,1)");
 
     ctx.strokeStyle = gradient;
     ctx.lineCap = "round";

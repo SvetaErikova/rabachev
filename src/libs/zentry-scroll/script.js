@@ -10,7 +10,7 @@ function zentryScroll(){
         start: "top top",
         end: () => `+=${totalStickyHeight}`,
         scrub: true,
-        markers: true,
+        // markers: true,
         pin: true,
       },
     });

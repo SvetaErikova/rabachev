@@ -81,7 +81,7 @@ html
 
 @media (min-width: 641px)
   .container
-    padding: 0 calc(var(--u-ritmo-verticale-vw) * 10)
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 6)
 
 @media (min-width: 1921px)
   .container
@@ -180,3 +180,33 @@ html.lenis
 .-mob
   @media (min-width: 641px)
     display: none !important
+.scrollToStart
+  position: absolute
+  left: auto
+  bottom: calc(var(--u-ritmo-verticale-vw) * 7)
+  right: calc(var(--u-ritmo-verticale-vw) * 3)
+  font-size: calc(var(--u-ritmo-verticale-vw) * 3.5)
+  line-height: calc(var(--u-ritmo-verticale-vw) * 4)
+  color: #F5F5F5
+  z-index: 10
+  text-transform: uppercase
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  mix-blend-mode: difference
+  cursor: pointer
+  .arrow
+    aspect-ratio: 16/64
+    width: calc(var(--u-ritmo-verticale-vw) * 2)
+    height: auto
+    position: relative
+    bottom: calc(var(--u-ritmo-verticale-vw) * -2)
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='57' viewBox='0 0 16 57' fill='none'%3E%3Cg%3E%3Cpath d='M8.70711 0.292892C8.31658 -0.0976295 7.68342 -0.0976295 7.29289 0.292892L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41422L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292892ZM9 57L9 1H7L7 57H9Z' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E")
+    background-size: contain
+    background-repeat: no-repeat
+
+.js-more-text
+  transition: opacity 0.5s ease-in-out
+  &.fade
+    opacity: 0
+
