@@ -1,41 +1,34 @@
-function zentryScroll(){
-  let stickySection = document.querySelector(".u-image-text");
+function zentryScroll() {
+  let stickySection = document.querySelector(".u-image-text")
   if (window.matchMedia('(min-width: 641px)').matches && stickySection) {
-    let stickySection = document.querySelector(".u-image-text");
-    let totalStickyHeight = window.innerHeight * stickySection.querySelectorAll('.card').length;
+    let totalStickyHeight = window.innerHeight * stickySection.querySelectorAll('.card').length, cards = gsap.utils.toArray(".u-image-text .card:not(:first-of-type)"), textElements = gsap.utils.toArray(".u-image-text__note .-desk p");
+
 // Создаем временную шкалу для последовательных анимаций
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: stickySection,
-        start: "top top",
-        end: () => `+=${totalStickyHeight}`,
-        scrub: true,
-        // markers: true,
-        pin: true,
+        trigger: stickySection, start: "top top", end: () => `+=${totalStickyHeight}`, scrub: true, markers: true, pin: true,
       },
     });
 // Анимация для каждой карточки
     gsap.utils.toArray(".u-image-text .card:not(:first-of-type)").forEach((card, index) => {
       // Анимация для картинок
       tl.to(card, {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        ease: "none",
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)", ease: "none",
 
         onUpdate: function () {
           const progress = this.progress;
           gsap.set(card, {
             clipPath: `polygon(
-          ${gsap.utils.interpolate(40, 0, progress)}% ${gsap.utils.interpolate(25, 0, progress)}%,
-          ${gsap.utils.interpolate(60, 100, progress)}% ${gsap.utils.interpolate(25, 0, progress)}%,
-          ${gsap.utils.interpolate(60, 100, progress)}% ${gsap.utils.interpolate(75, 100, progress)}%,
-          ${gsap.utils.interpolate(40, 0, progress)}% ${gsap.utils.interpolate(75, 100, progress)}%
+          ${40 - progress * 40}% ${25 - progress * 25}%,
+          ${60 + progress * 40}% ${25 - progress * 25}%,
+          ${60 + progress * 40}% ${75 + progress * 25}%,
+          ${40 - progress * 40}% ${75 + progress * 25}%
         )`,
           });
         },
       });
 
       // Анимация для текста
-      const textElements = gsap.utils.toArray(".u-image-text__note .-desk p");
       const text = textElements[index]; // Используем index из forEach
 
       if (text) {
@@ -61,6 +54,7 @@ function zentryScroll(){
     });
   }
 }
-document.addEventListener("DOMContentLoaded", (event) => {
-  zentryScroll()
-});
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+zentryScroll()
+// });

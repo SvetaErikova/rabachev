@@ -56,7 +56,7 @@ function initAnimations() {
     let speed = 0.3 + Math.random() * 1; // Случайная скорость от 0.5 до 1.5
     gsap.fromTo(card, {
       scale: 0.7,
-      y: -300,
+      y: -250,
     }, {
       y: 0,
       scale: 1,
@@ -146,7 +146,8 @@ u_hero.forEach(section => {
       heroList.addEventListener('pointerdown', stopAnimation);
 
   } else {
-    GradientsBack()
+    initAnimations();
+
     modalImage(section)
     // Обработчик для кнопок переключения сетки
     document.querySelectorAll('button[data-grid]').forEach(btn => {
@@ -156,11 +157,10 @@ u_hero.forEach(section => {
         section.dataset.grid = gridState;
       });
     });
-    initAnimations();
+
     document.addEventListener('DOMContentLoaded', function () {
       scrollbarHero()
+      GradientsBack()
     });
   }
-
-
 })

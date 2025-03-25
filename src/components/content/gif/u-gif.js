@@ -14,6 +14,4 @@ if (window.matchMedia('(min-width: 641px)').matches) {
       markers: false,
     }
   });
-
-
 }
