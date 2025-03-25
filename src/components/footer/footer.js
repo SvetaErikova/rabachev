@@ -1,8 +1,9 @@
 function footerSticky(){
-  let footer = document.querySelector('.footer')
+  let footer = document.querySelector('.footer__container')
   if(footer){
     let footer_height = footer.offsetHeight
     document.documentElement.style.setProperty('--footerHeight', `${footer_height}px`)
+    console.log(footer_height)
   }
 }
 window.addEventListener('resize', footerSticky);

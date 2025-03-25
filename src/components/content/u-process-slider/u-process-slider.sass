@@ -1,22 +1,25 @@
 .u-process-slider
   overflow: hidden
   background-color: #FFFFFF
-  padding: calc(var(--u-ritmo-verticale-vw) * 4) 0
+  padding: calc(var(--u-ritmo-verticale-vw) * 2.5)  0
+  position: relative
+  z-index: 1
   @media (min-width: 641px)
     padding: calc(var(--u-ritmo-verticale-vw) * 12) 0
   .container
     display: flex
     flex-direction: column
   &__list
-    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 2)
-    //max-width: calc(var(--u-ritmo-verticale-vw) * 106)
     @media (min-width: 641px)
       margin-left: calc(var(--u-ritmo-verticale-vw) * 26)
+      padding: 0
 
 
   &__text
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 3) 0 calc(var(--u-ritmo-verticale-vw) * 4)
     margin-bottom: calc(var(--u-ritmo-verticale-vw) * 3)
     @media (min-width: 641px)
+      padding: 0
       width: calc(var(--u-ritmo-verticale-vw) * 143)
       margin-left: auto
       margin-bottom: calc(var(--u-ritmo-verticale-vw) * 9)
@@ -32,8 +35,8 @@
         text-align: center
         margin-right: calc(var(--u-ritmo-verticale-vw) * 6)
     p
-      font-size: calc(var(--u-ritmo-verticale-vw) * 2.5)
-      line-height: calc(var(--u-ritmo-verticale-vw) * 2.5)
+      font-size: calc(var(--u-ritmo-verticale-vw) * 2.75)
+      line-height: calc(var(--u-ritmo-verticale-vw) * 3)
       letter-spacing: -0.05em
       @media (min-width: 641px)
         display: inline

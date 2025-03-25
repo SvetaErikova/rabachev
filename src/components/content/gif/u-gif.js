@@ -1,5 +1,5 @@
-if (window.matchMedia('(min-width: 641px)').matches) {
-// Получаем элементы
+
+function animationGif(){
   const hero = document.querySelector('.u-hero__container');
 
 // Создаем анимацию с помощью GSAP и ScrollTrigger
@@ -11,7 +11,12 @@ if (window.matchMedia('(min-width: 641px)').matches) {
       scrub: true, // Анимация будет плавно изменяться при прокрутке
       pin: true, // Фиксируем .u-hero на месте
       pinSpacing: false, // Не добавляем отступы вокруг фиксированного блока
-      markers: false,
+      markers: true,
     }
   });
+}
+
+if (window.matchMedia('(min-width: 641px)').matches) {
+  animationGif()
+
 }

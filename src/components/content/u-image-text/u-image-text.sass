@@ -3,7 +3,7 @@
   position: relative
   overflow: hidden
   z-index: 2
-  padding: calc(var(--u-ritmo-verticale-vw) * 4) 0 0
+  padding: 0
   @media (min-width: 641px)
     padding: calc(var(--u-ritmo-verticale-vw) * 7) 0 calc(var(--u-ritmo-verticale-vw) * 6)
   &__container
@@ -29,21 +29,23 @@
     flex-direction: column
     justify-content: center
     gap: calc( var(--u-ritmo-verticale-vw) * 1)
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 3) 0 calc(var(--u-ritmo-verticale-vw) * 4)
     @media (min-width: 641px)
       width: calc( var(--u-ritmo-verticale-vw) * 76.5)
       gap: calc( var(--u-ritmo-verticale-vw) * 2)
+      padding: 0
 
   &__subtitle
     color: #737373
-    font-size: calc( var(--u-ritmo-verticale-vw) * 2)
-    line-height: calc( var(--u-ritmo-verticale-vw) * 2)
+    font-size: calc( var(--u-ritmo-verticale-vw) * 2.5)
+    line-height: calc( var(--u-ritmo-verticale-vw) * 3)
     @media (min-width: 641px)
       font-size: calc( var(--u-ritmo-verticale-vw) * 3)
       line-height: calc( var(--u-ritmo-verticale-vw) * 3)
   &__text
     color: var(--default-text)
-    font-size: calc( var(--u-ritmo-verticale-vw) * 4)
-    line-height: calc( var(--u-ritmo-verticale-vw) * 3)
+    font-size: calc( var(--u-ritmo-verticale-vw) * 3.75)
+    line-height: calc( var(--u-ritmo-verticale-vw) * 4)
     letter-spacing: calc(var(--u-ritmo-verticale-vw) * 0.15 * -1)
     letter-spacing: -0.06em
     @media (min-width: 641px)

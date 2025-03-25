@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 // Обработчик для текста с анимацией hover
 document.querySelectorAll('.text_roll').forEach(link => {
   let span = link.querySelector('span');

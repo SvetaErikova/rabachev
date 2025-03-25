@@ -5,8 +5,27 @@ let activateHeroSliderMob = (swiper_item) => {
   });
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-hero__list');
+
+  // Создаем элементы для пагинации и прогресс-бара
+  let slider_pagination = document.createElement('div');
+  slider_pagination.classList.add('slider--pagination');
+
   let slider_progressbar = document.createElement('div');
-  slider_progressbar.classList.add('u-hero-slider--progressbar');
+  slider_progressbar.classList.add('slider--progressbar');
+
+  let slider_controls = document.createElement('div');
+  slider_controls.classList.add('slider_controls');
+
+  slider_controls.append(slider_progressbar);
+
+  // Создаем кнопки навигации
+  let swiper_nav_prev = document.createElement('div');
+  swiper_nav_prev.classList.add('swiper--prev');
+  slider_controls.append(swiper_nav_prev);
+
+  let swiper_nav_next = document.createElement('div');
+  swiper_nav_next.classList.add('swiper--next');
+  slider_controls.append(swiper_nav_next);
 
 
   // Инициализация Swiper
@@ -25,21 +44,35 @@ let activateHeroSliderMob = (swiper_item) => {
     freeMode: false,
     allowTouchMove: true,
     uniqueNavElements: true,
-    loop: true,
     slidesPerView: 1,
     spaceBetween: 8,
     mousewheel: {
       forceToAxis: true,
     },
-    pagination: {
-      el: slider_progressbar,
-      type: "progressbar",
+    navigation: {
+      nextEl: swiper_nav_next,
+      prevEl: swiper_nav_prev,
+    },
+    on: {
+      init: function () {
+        updatePagination(this); // Обновление пагинации
+      },
+      slideChange: function () {
+
+        updatePagination(this); // Обновление пагинации
+      },
     },
   });
-
+  // Функция для обновления пагинации
+  function updatePagination(swiper) {
+    const currentSlide = swiper.realIndex + 1; // Текущий слайд (начинаем с 1)
+    const totalSlides = swiper.slides.length; // Общее количество слайдов
+    slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
+  }
   // Добавляем прогресс-бар
   if (swiper_item && swiper_item.closest('.u-hero')) {
-    swiper_item.prepend(slider_progressbar);
+    slider_controls.append(slider_pagination);
+    slider.append(slider_controls);
   }
 
 };

@@ -36,19 +36,4 @@ if (window.matchMedia('(min-width: 641px)').matches)  {
     // header_menu.classList.toggle('opening_menu'); // Переключаем класс для .u-header
     document.querySelector('html').classList.toggle('opening-menu')
   });
-
-  window.addEventListener('scroll', function() {
-    // Получаем текущую позицию прокрутки
-    const scrollPosition = window.scrollY || window.pageYOffset;
-
-    // Проверяем, прокручена ли страница больше, чем высота хедера
-    if (scrollPosition > header_height) {
-      // Добавляем класс is_scroll
-      header.classList.add('is_scroll');
-    } else {
-      // Убираем класс is_scroll
-      header.classList.remove('is_scroll');
-    }
-  });
-
 }
