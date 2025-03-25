@@ -77,7 +77,6 @@ let activateProjectSliderDesk = (swiper_item) => {
     draggable: true,
     simulateTouch: true,
     freeMode: false,
-    loop: true,
     slidesPerView: 1,
     loopAdditionalSlides: 10,
     loopPreventsSliding: false,
@@ -90,7 +89,7 @@ let activateProjectSliderDesk = (swiper_item) => {
       nextEl: swiper_nav_next,
       prevEl: swiper_nav_prev,
     },
-    pagination: {
+    pagination: isMobile ? false : {
       el: slider_progressbar,
       type: "progressbar",
     },
@@ -118,8 +117,15 @@ let activateProjectSliderDesk = (swiper_item) => {
     slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
   }
 
-  slider_progressbar.append(slider_pagination);
-  swiper_item.querySelector('.container').append(slider_controls);
+
+  if (window.matchMedia('(min-width: 641px)').matches) {
+    slider_progressbar.append(slider_pagination);
+    swiper_item.querySelector('.container').append(slider_controls);
+  } else{
+    slider_controls.append(slider_pagination);
+    slider.append(slider_controls);
+  }
+
 };
 
 let u_project_slider = document.querySelectorAll('.u-project-slider');

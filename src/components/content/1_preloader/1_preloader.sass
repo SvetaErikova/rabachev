@@ -9,6 +9,10 @@
   z-index: 100
   //transition: 0.3s ease-in-out
   &__logo
+    position: absolute
+    translate: -50% -50%
+    top: 50%
+    left: 50%
     filter: blur(10px)
     font-family: 'Kharms Display'
     display: block
@@ -22,3 +26,39 @@
       display: block
       font-size: calc(var(--u-ritmo-verticale-vw) * 10)
       line-height: calc(var(--u-ritmo-verticale-vw) * 11)
+  &:after
+    content: 'Loading ...'
+    font-size: calc(var(--u-ritmo-verticale-vw) * 3)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 8)
+    margin-left: auto
+    margin-right: calc(var(--u-ritmo-verticale-vw) * 3)
+    position: absolute
+    top: auto
+    left: auto
+    right: calc(var(--u-ritmo-verticale-vw) * 3)
+    bottom: 0
+  &__line
+    background-color: #FAF8F5
+    position: absolute
+    bottom: calc(var(--u-ritmo-verticale-vw) * 3)
+    height: calc(var(--u-ritmo-verticale-vw) * 3)
+
+
+.is_loading.u-header
+  z-index: 110
+  .menu
+    opacity: 0
+  .u-header__logo
+    animation: blink 3s infinite linear
+
+  @keyframes blink
+    0%
+      opacity: 1
+    33%
+      opacity: 0
+    66%
+      opacity: 1
+    100%
+      opacity: 0
+
+

@@ -12,19 +12,41 @@
   font-size: calc(var(--u-ritmo-verticale-vw) * 2)
   line-height: calc(var(--u-ritmo-verticale-vw) * 3)
   letter-spacing: 0.03em
-  position: absolute
-  left: calc(var(--u-ritmo-verticale-vw) * 1.5)
-  top: 50%
-  translate: 0 -50%
   z-index: 1
-  mix-blend-mode: difference
   color: #FFFFFF
+  order: -1
+  white-space: nowrap
+  @media (min-width: 641px)
+    position: absolute
+    left: calc(var(--u-ritmo-verticale-vw) * 1.5)
+    top: 50%
+    translate: 0 -50%
+    order: 1
+    mix-blend-mode: difference
+.slider--progressbar
+  @media (max-width: 640px)
+    display: flex
+    align-content: center
+    justify-content: center
+    &:after
+      content: 'disposable'
+      font-size: calc(var(--u-ritmo-verticale-vw) * 2)
+      color: #FFFFFF
+      text-transform: uppercase
 .slider_controls
   grid-column: 1
   display: flex
   gap: calc(var(--u-ritmo-verticale-vw) * 3)
   align-items: center
   width: 100%
+  z-index: 10
+  @media (max-width: 640px)
+    position: absolute
+    left: calc(var(--u-ritmo-verticale-vw) * 2)
+    right: calc(var(--u-ritmo-verticale-vw) * 2)
+    bottom: calc(var(--u-ritmo-verticale-vw) * 2)
+    width: auto
+    justify-content: space-between
   .swiper--prev,
   .swiper--next
     aspect-ratio: 1/1
@@ -33,12 +55,16 @@
     background-repeat: no-repeat
     background-size: contain
     cursor: pointer
+    @media (max-width: 640px)
+      filter: invert(1)
   .swiper--prev
-    margin-left: auto
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9.5 6L3 12M3 12L9.5 18M3 12H22' stroke='%232E2728' stroke-width='1.5'/%3E%3C/svg%3E")
+    @media (min-width: 64qpx)
+      margin-left: auto
   .swiper--next
-
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M14.5 18L21 12M21 12L14.5 6M21 12L2 12' stroke='%232E2728' stroke-width='1.5'/%3E%3C/svg%3E")
 .swiper-wrapper
   -webkit-transform-style: preserve-3d
   align-items: flex-start
+.swiper-button-disabled
+  opacity: 0

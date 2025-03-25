@@ -55,6 +55,6 @@ function zentryScroll() {
   }
 }
 
-// document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", (event) => {
 zentryScroll()
-// });
+});

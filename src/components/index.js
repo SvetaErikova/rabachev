@@ -1,3 +1,4 @@
+// Смена темы
 // Функция для установки темы
 function setTheme(theme) {
   document.body.dataset.theme = theme;

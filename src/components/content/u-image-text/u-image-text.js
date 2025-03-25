@@ -2,8 +2,17 @@ let activateImageTextSliderMob = (swiper_item) => {
   // Находим слайдер
   let slider = swiper_item.querySelector('.u-image-text__image');
 
+  // Создаем элементы для пагинации и прогресс-бара
+  let slider_pagination = document.createElement('div');
+  slider_pagination.classList.add('slider--pagination');
+
+  let slider_progressbar = document.createElement('div');
+  slider_progressbar.classList.add('slider--progressbar');
+
   let slider_controls = document.createElement('div');
   slider_controls.classList.add('slider_controls');
+
+  slider_controls.append(slider_progressbar);
 
   // Создаем кнопки навигации
   let swiper_nav_prev = document.createElement('div');
@@ -31,7 +40,6 @@ let activateImageTextSliderMob = (swiper_item) => {
     freeMode: false,
     allowTouchMove: true,
     uniqueNavElements: true,
-    loop: true,
     slidesPerView: 1,
     spaceBetween: 8,
     mousewheel: {
@@ -41,34 +49,35 @@ let activateImageTextSliderMob = (swiper_item) => {
       nextEl: swiper_nav_next,
       prevEl: swiper_nav_prev,
     },
+
     lazy: {
       loadPrevNext: true,
       loadPrevNextAmount: 2
     },
-  });
+    on: {
+      init: function () {
+        updatePagination(this); // Обновление пагинации
+      },
+      slideChange: function () {
 
-  // Добавляем прогресс-бар
-  if (swiper_item && swiper_item.closest('.u-image-text')) {
-    swiper_item.querySelector('.u-image-text__note').append(slider_controls);
+        updatePagination(this); // Обновление пагинации
+      },
+    },
+  });
+  // Функция для обновления пагинации
+  function updatePagination(swiper) {
+    const currentSlide = swiper.realIndex + 1; // Текущий слайд (начинаем с 1)
+    const totalSlides = swiper.slides.length; // Общее количество слайдов
+    slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
   }
-  // Массив с текстами для каждого слайда
-  const slideTexts = [
-    "Disposable in the Vasileostrovskaya metro station in Saint Petersburg",
-    "He is a firm believer in the need to give contemporary photography a new look and pursues his goals day after day.",
-    "Results and exhibitions"
-  ];
-  // Находим элемент для отображения текста
-  const noteTextElement = swiper_item.querySelector('.u-image-text__note div p');
 
-  // Обновляем текст при изменении слайда
-  projectSliderMob.on('slideChange', function () {
-    const activeIndex = projectSliderMob.realIndex; // Получаем индекс активного слайда
-    noteTextElement.textContent = slideTexts[activeIndex]; // Обновляем текст
-  });
-
-  // Инициализация текста для первого слайда
-  noteTextElement.textContent = slideTexts[0];
-
+  if (window.matchMedia('(min-width: 641px)').matches) {
+    slider_progressbar.append(slider_pagination);
+    swiper_item.querySelector('.container').append(slider_controls);
+  } else{
+    slider_controls.append(slider_pagination);
+    slider.append(slider_controls);
+  }
 };
 let u_image_text= document.querySelectorAll('.u-image-text');
 u_image_text.forEach(section => {

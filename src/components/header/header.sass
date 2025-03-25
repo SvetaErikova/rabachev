@@ -24,7 +24,6 @@
     color: #FFFFFF
     line-height: calc(var(--u-ritmo-verticale-vw) * 6)
     letter-spacing: -0.02em
-    translate: calc(var(--u-ritmo-verticale-vw) * 6)
     transition: var(--transition)
     @media (min-width: 641px)
       display: block
@@ -41,11 +40,6 @@
     align-items: center
     mix-blend-mode: difference
     .icon-close
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cline x1='7.12883' y1='24.6255' x2='25.7949' y2='5.95951' stroke='%23F5F5F5' stroke-width='2'/%3E%3Cline x1='6.20589' y1='5.96025' x2='24.8719' y2='24.6263' stroke='%23F5F5F5' stroke-width='2'/%3E%3C/svg%3E")
-      background-size: contain
-      background-repeat: no-repeat
-      width: calc(var(--u-ritmo-verticale-vw) * 3)
-      height: calc(var(--u-ritmo-verticale-vw) * 3)
       display: none
     @media (min-width: 641px)
       display: none
@@ -165,8 +159,7 @@
       text-transform: uppercase
       font-size: calc(var(--u-ritmo-verticale-vw)* 8)
       a
-        -webkit-text-stroke: 1px #FFFFFF
-        color: transparent
+        color: #FFFFFF
         line-height: 0.9em
       &__list
         display: flex
@@ -176,8 +169,7 @@
       flex-wrap: wrap
       a
         font-size: calc(var(--u-ritmo-verticale-vw)* 3)
-        -webkit-text-stroke: 1px #FFFFFF
-        color: transparent
+        color: #FFFFFF
         margin-top: auto
         &.is_active
           font-weight: 700

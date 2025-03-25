@@ -107,27 +107,8 @@ function switchTheme(){
         });
       });
     });
-  } else{
-    // Обработчик для кнопок переключения темы моб
-
-    // Функция для получения следующей темы
-    function getNextTheme(currentTheme) {
-      let themes = ['white', 'dark', 'color'];
-      let currentIndex = themes.indexOf(currentTheme);
-      let nextIndex = (currentIndex + 1) % themes.length; // Переход к следующей теме по кругу
-      return themes[nextIndex];
-    }
-    // Обработчик клика на кнопку
-    document.querySelector('.u-hero__btn-theme').addEventListener('click', function() {
-      let currentTheme = document.body.dataset.theme;
-      let nextTheme = getNextTheme(currentTheme);
-      setTheme(nextTheme); // Устанавливаем следующую тему
-    });
   }
 }
-
-
-
 
 
 let u_hero= document.querySelectorAll('.u-hero');
@@ -136,15 +117,6 @@ u_hero.forEach(section => {
   switchTheme()
   if (window.matchMedia('(max-width: 640px)').matches) {
     activateHeroSliderMob(section)
-      let heroList = document.querySelector('.u-hero__list');
-      function stopAnimation() {
-        // Завершаем анимацию после текущего цикла
-        heroList.style.animationIterationCount = '1';
-        heroList.style.animationFillMode = 'forwards'; // Останавливаем анимацию на последнем кадре
-        heroList.removeEventListener('pointerdown', stopAnimation); // Удаляем слушатель события
-      }
-      heroList.addEventListener('pointerdown', stopAnimation);
-
   } else {
     initAnimations();
 

@@ -3,21 +3,6 @@
   position: relative
   background-color: var(--bck-color)
   transition: 0.18s background-color ease-in-out
-  @media (max-width: 640px)
-    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 4)
-    &__btn-theme
-      position: absolute
-      z-index: 100
-      display: flex
-      align-items: center
-      height: var(--headerHeight)
-      top: 0
-      left: calc(var(--u-ritmo-verticale-vw) * 1.75)
-      button
-        width: calc(var(--u-ritmo-verticale-vw)* 3.5)
-        height: calc(var(--u-ritmo-verticale-vw)* 3.5)
-        background-size: contain
-        background-repeat: no-repeat
   @media (min-width: 641px)
     &:after
       content: ''
@@ -220,13 +205,3 @@
 html.lenis body,
 section
   overflow: initial
-
-
-@keyframes sliderMobAnimation
-  0%
-    translate: 0 0
-
-  50%
-    translate: -10% 0
-  100%
-    translate: 0 0

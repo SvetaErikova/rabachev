@@ -29,7 +29,6 @@ let activateProcessSlider = (swiper_item) => {
       createElements: true,
       slideClass: 'card',
       slidesPerView: 1,
-      loop: true,
       spaceBetween: 32,
       initialSlide: 1,
       mousewheel: {
@@ -78,7 +77,6 @@ let activateProcessSlider = (swiper_item) => {
       createElements: true,
       slideClass: 'card',
       slidesPerView: 1,
-      loop: true,
       spaceBetween: 32,
       initialSlide: 1,
       mousewheel: {
@@ -87,10 +85,6 @@ let activateProcessSlider = (swiper_item) => {
       navigation: {
         nextEl: swiper_nav_next,
         prevEl: swiper_nav_prev,
-      },
-      pagination: {
-        el: slider_progressbar,
-        type: "progressbar",
       },
       breakpoints: {
         640: {
@@ -118,9 +112,13 @@ let activateProcessSlider = (swiper_item) => {
     const totalSlides = swiper.slides.length; // Общее количество слайдов
     slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
   }
-  slider_progressbar.append(slider_pagination);
-  swiper_item.querySelector('.container').append(slider_controls);
-
+  if (window.matchMedia('(min-width: 641px)').matches) {
+    slider_progressbar.append(slider_pagination);
+    swiper_item.querySelector('.container').append(slider_controls);
+  } else{
+    slider_controls.append(slider_pagination);
+    slider.append(slider_controls);
+  }
 };
 
 let u_process_slider= document.querySelectorAll('.u-process-slider');
