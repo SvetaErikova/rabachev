@@ -1,22 +1,38 @@
+function animationGifDesk() {
+  const hero = document.querySelector(".u-hero__container");
 
-function animationGif(){
-  const hero = document.querySelector('.u-hero__container');
-
-// Создаем анимацию с помощью GSAP и ScrollTrigger
+  // Создаем анимацию с помощью GSAP и ScrollTrigger
   gsap.to(hero, {
     scrollTrigger: {
       trigger: hero,
-      start: 'bottom bottom', // Начинаем анимацию, когда верхний край .u-hero достигает верха окна просмотра
-      end: 'bottom end: `+=${window.innerHeight}`,', // Заканчиваем анимацию, когда нижний край .u-hero достигает нижнего края окна просмотра
+      start: "bottom bottom",
+      end: "bottom end: `+=${window.innerHeight}`,",
       scrub: true, // Анимация будет плавно изменяться при прокрутке
       pin: true, // Фиксируем .u-hero на месте
       pinSpacing: false, // Не добавляем отступы вокруг фиксированного блока
-      markers: true,
-    }
+      // markers: true,
+    },
+  });
+}
+function animationGifMob() {
+  const hero = document.querySelector(".u-hero__container");
+
+  // Создаем анимацию с помощью GSAP и ScrollTrigger
+  gsap.to(hero, {
+    scrollTrigger: {
+      trigger: hero,
+      start: "top top",
+      end: "bottom end: `+=${window.innerHeight}`,",
+      scrub: true, // Анимация будет плавно изменяться при прокрутке
+      pin: true, // Фиксируем .u-hero на месте
+      pinSpacing: false, // Не добавляем отступы вокруг фиксированного блока
+      // markers: true,
+    },
   });
 }
 
-if (window.matchMedia('(min-width: 641px)').matches) {
-  animationGif()
-
+if (window.matchMedia("(min-width: 641px)").matches) {
+  animationGifDesk();
+} else {
+  animationGifMob();
 }

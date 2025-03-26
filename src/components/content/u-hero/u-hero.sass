@@ -39,18 +39,20 @@
       overflow: hidden
   &__title
     width: max-content
-    display: flex
+
     flex-direction: column
     justify-content: center
     transition: var(--transition)
     pointer-events: none
+    display: none
     @media (min-width: 641px)
+      display: flex
       position: sticky
       bottom: 0
       padding-left:  calc(var(--u-ritmo-verticale-vw) * 50.4)
       z-index: -1
     h1
-      display: none
+
       -webkit-text-stroke: calc(var(--u-ritmo-verticale-vw) * 0.1875) var(--default-text)
       text-transform: uppercase
       color: transparent
