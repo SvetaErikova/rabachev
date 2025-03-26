@@ -3,7 +3,7 @@
   position: relative
   overflow: hidden
   z-index: 2
-  padding: 0
+  padding: calc(var(--u-ritmo-verticale-vw) * 2.5) 0
   @media (min-width: 641px)
     padding: calc(var(--u-ritmo-verticale-vw) * 7) 0 calc(var(--u-ritmo-verticale-vw) * 6)
   &__container
@@ -16,12 +16,12 @@
       grid-template-rows: 1fr max-content
       height: calc(100vh - (var(--u-ritmo-verticale-vw) * 6) * 2)
   &__image
+    aspect-ratio: 375/466
     @media (min-width: 641px)
-      //width: calc( var(--u-ritmo-verticale-vw) * 85.25)
       position: relative
       width: 100%
       height: 100%
-      //height: 80vh
+      aspect-ratio: auto
     img
       object-fit: cover
   &__content

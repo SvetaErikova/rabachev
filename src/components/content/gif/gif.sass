@@ -1,26 +1,35 @@
 .u-gif
   height: 100svh
+  min-height: 520px
   z-index: 4
   position: relative
-  aspect-ratio: 1528/712
+  //aspect-ratio: 1528/712
   @media (max-width: 640px)
     width: 100%
-    aspect-ratio: initial
-    padding-bottom: calc(var(--u-ritmo-verticale-vw) * 5.25)
+
   img, video
     object-fit: cover
     object-position: center
   &__title
-    display: none
+    //display: none
+    font-weight: 700
+    mix-blend-mode: difference
+    text-transform: uppercase
+    color: #F5F5F5
+    -webkit-text-stroke: 1px #F5F5F5
+    display: block
+    position: absolute
+
+    bottom: calc(var(--u-ritmo-verticale-vw) * 6)
+    white-space: nowrap
+    font-size: calc(var(--u-ritmo-verticale-vw) * 6)
+    line-height: calc(var(--u-ritmo-verticale-vw) * 7)
     @media (min-width: 641px)
-      display: block
-      position: absolute
       right: calc(var(--u-ritmo-verticale-vw) * 9)
       bottom: calc(var(--u-ritmo-verticale-vw) * 4)
       font-size: calc(var(--u-ritmo-verticale-vw) * 8)
       line-height: calc(var(--u-ritmo-verticale-vw) * 9)
-      font-weight: 700
-      mix-blend-mode: difference
-      text-transform: uppercase
-      color: #F5F5F5
-      -webkit-text-stroke: 1px #F5F5F5
+    @media (max-width: 640px)
+      translate:  -50% 0
+      left: 50%
+

@@ -4,7 +4,7 @@
   overflow: hidden
   display: flex
   flex-direction: column
-  padding: 0 0 calc(var(--u-ritmo-verticale-vw) * 2.5)
+  padding: calc(var(--u-ritmo-verticale-vw) * 5.25) 0 calc(var(--u-ritmo-verticale-vw) * 2.5)
   @media (min-width: 641px)
     padding: 0 0 calc(var(--u-ritmo-verticale-vw) * 6)
   .container
@@ -44,7 +44,9 @@
     height: calc(var(--u-ritmo-verticale-vw) * 90)
     overflow: hidden
     width: 100%
+    aspect-ratio: 375 / 390
     @media (min-width: 641px)
+      aspect-ratio: auto
       grid-column: 1
       grid-row: span 2
       .card__image
@@ -70,19 +72,18 @@
           display: flex
           border: 2px solid transparent
           transition: border var(--transition)
+          cursor: grab
         .swiper-slide:hover
           img
             filter: grayscale(0)
         .swiper-slide-thumb-active
           border: 2px solid #fed101
   &__content
-    margin-bottom: calc(var(--u-ritmo-verticale-vw) * 4)
     display: flex
     flex-direction: column
     gap: calc(var(--u-ritmo-verticale-vw) * 1.5)
-    padding: 0 calc(var(--u-ritmo-verticale-vw) * 3) 0 calc(var(--u-ritmo-verticale-vw) * 4)
+    padding: 0 calc(var(--u-ritmo-verticale-vw) * 3) calc(var(--u-ritmo-verticale-vw) * 1) calc(var(--u-ritmo-verticale-vw) * 4)
     @media (min-width: 641px)
-      margin-bottom: 0
       grid-row: 1
       grid-column: 2
       margin-top: calc(var(--u-ritmo-verticale-vw) * 1.5)
