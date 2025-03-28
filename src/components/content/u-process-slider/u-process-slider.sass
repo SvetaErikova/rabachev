@@ -12,12 +12,17 @@
   &__list
     aspect-ratio: 375 / 390
     @media (min-width: 641px)
+      cursor: grab
       margin-left: calc(var(--u-ritmo-verticale-vw) * 26)
       padding: 0
       display: flex
       aspect-ratio: auto
-      .card
+      min-height: 33.056vw
+    .card
+      @media (min-width: 641px)
         max-width: calc(var(--u-ritmo-verticale-vw) * 51)
+      &__image
+        height: 100%
 
 
   &__text

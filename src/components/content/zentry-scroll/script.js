@@ -70,6 +70,4 @@ function zentryScroll() {
     });
   }
 }
-// document.addEventListener("DOMContentLoaded", (event) => {
 zentryScroll();
-// });

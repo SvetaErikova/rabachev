@@ -1,49 +1,49 @@
 let activateProjectSliderDesk = (swiper_item) => {
   // Находим слайдер
-  let slider = swiper_item.querySelector('.u-project-slider__list');
+  let slider = swiper_item.querySelector(".u-project-slider__list");
 
   // Создаем элементы для пагинации и прогресс-бара
-  let slider_pagination = document.createElement('div');
-  slider_pagination.classList.add('slider--pagination');
-  let slider_progressbar = document.createElement('div');
-  slider_progressbar.classList.add('slider--progressbar');
-  let slider_controls = document.createElement('div');
-  slider_controls.classList.add('slider_controls');
+  let slider_pagination = document.createElement("div");
+  slider_pagination.classList.add("slider--pagination");
+  let slider_progressbar = document.createElement("div");
+  slider_progressbar.classList.add("slider--progressbar");
+  let slider_controls = document.createElement("div");
+  slider_controls.classList.add("slider_controls");
   slider_controls.append(slider_progressbar);
 
   // Создаем кнопки навигации
-  let swiper_nav_prev = document.createElement('div');
-  swiper_nav_prev.classList.add('swiper--prev');
+  let swiper_nav_prev = document.createElement("div");
+  swiper_nav_prev.classList.add("swiper--prev");
   slider_controls.append(swiper_nav_prev);
-  let swiper_nav_next = document.createElement('div');
-  swiper_nav_next.classList.add('swiper--next');
+  let swiper_nav_next = document.createElement("div");
+  swiper_nav_next.classList.add("swiper--next");
   slider_controls.append(swiper_nav_next);
 
   // Проверяем ширину экрана
-  const isMobile = window.matchMedia('(max-width: 640px)').matches;
+  const isMobile = window.matchMedia("(max-width: 640px)").matches;
 
   // Инициализация thumbs слайдера только для десктопов
   let thumbs = null;
   if (!isMobile) {
     // Создаем контейнер для thumbs
-    let thumbsContainer = document.createElement('div');
-    thumbsContainer.classList.add('u-project-slider__list-thumbs');
-    let thumbsWrapper = document.createElement('div');
-    thumbsWrapper.classList.add('swiper-wrapper');
+    let thumbsContainer = document.createElement("div");
+    thumbsContainer.classList.add("u-project-slider__list-thumbs");
+    let thumbsWrapper = document.createElement("div");
+    thumbsWrapper.classList.add("swiper-wrapper");
     thumbsContainer.appendChild(thumbsWrapper);
 
     // Копируем слайды для thumbs
-    let slides = slider.querySelectorAll('.card');
+    let slides = slider.querySelectorAll(".card");
     slides.forEach((slide, index) => {
-      let thumbSlide = document.createElement('div');
-      thumbSlide.classList.add('swiper-slide');
-      let thumbImage = slide.querySelector('.card__image img').cloneNode(true);
+      let thumbSlide = document.createElement("div");
+      thumbSlide.classList.add("swiper-slide");
+      let thumbImage = slide.querySelector(".card__image img").cloneNode(true);
       thumbSlide.appendChild(thumbImage);
       thumbsWrapper.appendChild(thumbSlide);
     });
 
     // Добавляем thumbs контейнер в swiper_item.querySelector('.container')
-    swiper_item.querySelector('.container').appendChild(thumbsContainer);
+    swiper_item.querySelector(".container").appendChild(thumbsContainer);
 
     // Инициализация thumbs слайдера
     thumbs = new Swiper(thumbsContainer, {
@@ -55,24 +55,24 @@ let activateProjectSliderDesk = (swiper_item) => {
       speed: 1000,
       lazy: {
         loadPrevNext: true,
-        loadPrevNextAmount: 4
+        loadPrevNextAmount: 4,
       },
     });
   }
-  swiper_item.querySelectorAll('.card .card__image img').forEach(img => {
-    img.classList.add('swiper-gl-image');
+  swiper_item.querySelectorAll(".card .card__image img").forEach((img) => {
+    img.classList.add("swiper-gl-image");
   });
   // Инициализация основного слайдера
   const projectSliderDesk = new Swiper(slider, {
     modules: [SwiperGL],
-    effect: 'gl',
+    effect: "gl",
     // SwiperGL module parameters
     gl: {
       // specify required shader effect
-      shader: 'morph-x',
+      shader: "morph-x",
     },
     createElements: true,
-    slideClass: 'card',
+    slideClass: "card",
     grabCursor: true,
     draggable: true,
     simulateTouch: true,
@@ -89,17 +89,18 @@ let activateProjectSliderDesk = (swiper_item) => {
       nextEl: swiper_nav_next,
       prevEl: swiper_nav_prev,
     },
-    pagination: isMobile ? false : {
-      el: slider_progressbar,
-      type: "progressbar",
-    },
-    thumbs: isMobile ? null : { // Подключаем thumbs только для десктопов
-      swiper: thumbs,
-    },
-    lazy: {
-      loadPrevNext: true,
-      loadPrevNextAmount: 2
-    },
+    pagination: isMobile
+      ? false
+      : {
+          el: slider_progressbar,
+          type: "progressbar",
+        },
+    thumbs: isMobile
+      ? null
+      : {
+          // Подключаем thumbs только для десктопов
+          swiper: thumbs,
+        },
     on: {
       init: function () {
         updatePagination(this); // Обновление пагинации
@@ -117,18 +118,16 @@ let activateProjectSliderDesk = (swiper_item) => {
     slider_pagination.textContent = `${currentSlide} OFF ${totalSlides}`;
   }
 
-
-  if (window.matchMedia('(min-width: 641px)').matches) {
+  if (window.matchMedia("(min-width: 641px)").matches) {
     slider_progressbar.append(slider_pagination);
-    swiper_item.querySelector('.container').append(slider_controls);
-  } else{
+    swiper_item.querySelector(".container").append(slider_controls);
+  } else {
     slider_controls.append(slider_pagination);
     slider.append(slider_controls);
   }
-
 };
 
-let u_project_slider = document.querySelectorAll('.u-project-slider');
-u_project_slider.forEach(section => {
+let u_project_slider = document.querySelectorAll(".u-project-slider");
+u_project_slider.forEach((section) => {
   activateProjectSliderDesk(section);
 });
