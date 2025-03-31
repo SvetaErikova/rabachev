@@ -1,7 +1,7 @@
 function preloaderStart() {
-  const preloader = document.querySelector(".preloader");
-  const preloaderLogo = preloader.querySelector(".preloader__logo");
-  const preloaderLine = preloader.querySelector(".preloader__line");
+  let preloader = document.querySelector(".preloader");
+  let preloaderLogo = preloader.querySelector(".preloader__logo");
+  let preloaderLine = preloader.querySelector(".preloader__line");
 
   // Начальное состояние
   gsap.set(preloaderLine, {
@@ -12,8 +12,8 @@ function preloaderStart() {
   });
 
   // Кастомная кривая Безье для линии (ease: "power2.out" с модификацией)
-  const customBezier = "M0,0 C0.33,0 0.44,0.5 0.66,0.7 0.88,0.9 1,1 1,1";
-  const tl = gsap.timeline();
+  let customBezier = "M0,0 C0.33,0 0.44,0.5 0.66,0.7 0.88,0.9 1,1 1,1";
+  let tl = gsap.timeline();
   // Анимация логотипа
   tl.to(
     preloaderLogo,
