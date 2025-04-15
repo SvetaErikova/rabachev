@@ -23,16 +23,16 @@ let activateImageTextSliderMob = (swiper_item) => {
   swiper_nav_next.classList.add("swiper--next");
   slider_controls.append(swiper_nav_next);
 
-  // swiper_item.querySelectorAll(".card img").forEach((img) => {
-  //   img.classList.add("swiper-gl-image");
-  // });
+  swiper_item.querySelectorAll(".card img").forEach((img) => {
+    img.classList.add("swiper-gl-image");
+  });
   // Инициализация Swiper
   const projectSliderMob = new Swiper(slider, {
-    // modules: [SwiperGL],
-    // effect: "gl",
-    // gl: {
-    //   shader: "morph-x",
-    // },
+    modules: [SwiperGL],
+    effect: "gl",
+    gl: {
+      shader: "morph-x",
+    },
     createElements: true,
     slideClass: "card",
     grabCursor: true,

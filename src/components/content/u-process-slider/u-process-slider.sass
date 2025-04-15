@@ -11,6 +11,8 @@
     flex-direction: column
   &__list
     aspect-ratio: 375 / 390
+    position: relative
+
     @media (min-width: 641px)
       cursor: grab
       margin-left: calc(var(--u-ritmo-verticale-vw) * 26)
@@ -18,6 +20,9 @@
       display: flex
       aspect-ratio: auto
       min-height: 33.056vw
+    @media (max-width: 640px)
+      width: 100%
+      height: auto
     .card
       @media (min-width: 641px)
         max-width: calc(var(--u-ritmo-verticale-vw) * 51)

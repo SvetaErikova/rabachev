@@ -5,7 +5,9 @@
   top: 0
   z-index: 50
   mix-blend-mode: difference
-  @media (min-width: 641px)
+  @media (max-width: 640px)
+    transition: var(--transition)
+    translate: 0 0
   &__container
     display: flex
     align-items: center
@@ -104,6 +106,7 @@
   .menu
     right: calc(var(--u-ritmo-verticale-vw)* 76)
 .u-header.is_scroll
+
   --color-secondary-text: #fff
   @media (min-width: 641px)
     .menu
@@ -126,8 +129,7 @@
           opacity: 1
           pointer-events: auto
   @media (max-width: 640px)
-    .u-header__logo
-      translate: 0
+    translate: 0 -100%
 
 .u-header__menu
   display: none

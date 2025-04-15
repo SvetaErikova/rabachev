@@ -146,21 +146,20 @@ function switchTheme() {
   }
 }
 
-let u_hero = document.querySelectorAll(".u-hero");
-
-u_hero.forEach((section) => {
+let u_hero = document.querySelector(".u-hero");
+if (u_hero) {
   switchTheme();
   if (window.matchMedia("(max-width: 640px)").matches) {
-    activateHeroSliderMob(section);
+    activateHeroSliderMob(u_hero);
   } else {
     initAnimations();
-    modalImage(section);
+    modalImage(u_hero);
     // Обработчик для кнопок переключения сетки
     document.querySelectorAll("button[data-grid]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         let gridState = e.currentTarget.dataset.grid === "ON" ? "OFF" : "ON";
         e.currentTarget.dataset.grid = gridState;
-        section.dataset.grid = gridState;
+        u_hero.dataset.grid = gridState;
       });
     });
     document.addEventListener("DOMContentLoaded", function () {
@@ -168,4 +167,6 @@ u_hero.forEach((section) => {
       GradientsBack();
     });
   }
-});
+}
+
+

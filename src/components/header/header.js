@@ -31,9 +31,29 @@ if (window.matchMedia('(min-width: 641px)').matches)  {
 
 } else{
   let btn_open_menu = document.querySelector('.u-header__button-open-menu');
-
   btn_open_menu.addEventListener('click', () => {
     // header_menu.classList.toggle('opening_menu'); // Переключаем класс для .u-header
     document.querySelector('html').classList.toggle('opening-menu')
+  });
+
+  const hero = document.querySelector('.u-hero').clientHeight;
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    // Если прокрутили ниже hero-секции, включаем логику скрытия/показа
+    if (currentScroll > hero) {
+      if (currentScroll > lastScroll) {
+        // Скролл вниз — скрываем хедер
+        header.classList.add('is_scroll');
+      } else if (currentScroll < lastScroll) {
+        // Скролл вверх — показываем хедер
+        header.classList.remove('is_scroll');
+      }
+    } else {
+      // Если мы выше hero-секции, всегда показываем хедер
+      header.classList.remove('is_scroll');
+    }
+    lastScroll = currentScroll;
   });
 }

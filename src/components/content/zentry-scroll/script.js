@@ -10,12 +10,12 @@ function zentryScroll() {
       start: "top top",
       end: () => `+=${totalStickyHeight}`,
       scrub: true,
-      markers: true,
+      markers: false,
       pin: true,
     },
   });
   // Анимация для каждой карточки
-  gsap.utils.toArray(".u-image-text .card:not(:first-of-type)").forEach((card, index) => {
+  gsap.utils.toArray(cards).forEach((card, index) => {
     // Анимация для картинок
     tl.to(card, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -67,6 +67,6 @@ function zentryScroll() {
     }
   });
 }
-if (window.matchMedia("(min-width: 641px)")) {
+if (window.matchMedia("(min-width: 641px)").matches) {
   zentryScroll();
 }

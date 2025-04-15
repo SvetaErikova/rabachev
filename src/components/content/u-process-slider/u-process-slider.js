@@ -59,17 +59,17 @@ let activateProcessSlider = (swiper_item) => {
       },
     });
   } else {
-    // swiper_item.querySelectorAll(".card .card__image img").forEach((img) => {
-    //   img.classList.add("swiper-gl-image");
-    // });
+    swiper_item.querySelectorAll(".card .card__image img").forEach((img) => {
+      img.classList.add("swiper-gl-image");
+    });
     const processSliderMob = new Swiper(slider, {
-      // modules: [SwiperGL],
-      // effect: "gl",
-      // // SwiperGL module parameters
-      // gl: {
-      //   // specify required shader effect
-      //   shader: "morph-x",
-      // },
+      modules: [SwiperGL],
+      effect: "gl",
+      // SwiperGL module parameters
+      gl: {
+        // specify required shader effect
+        shader: "morph-x",
+      },
       createElements: true,
       slideClass: "card",
       slidesPerView: 1,

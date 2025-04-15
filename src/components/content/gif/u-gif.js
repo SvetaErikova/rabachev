@@ -38,7 +38,7 @@ function animationGifMob() {
         start: "top 80%",
         end: `bottom top`,
         scrub: true,
-        markers: true,
+        markers: false,
       },
     },
   );
